@@ -10,17 +10,18 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 //! CUSTOM 
 import './index.css';
+import rootReducer from './Store/rootReducer';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-// const store = createStore(, composeEnhancer(applyMiddleware(thunk)))
+const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider store={null}> */}
+    <Provider store={store}>
       <Router >
         <App />
       </Router>
-    {/* </Provider> */}
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
