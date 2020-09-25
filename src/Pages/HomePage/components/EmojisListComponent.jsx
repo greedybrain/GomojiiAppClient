@@ -6,18 +6,6 @@ import ifEmoji from 'if-emoji'
 import EmojiChildComponent from './EmojiChildComponent'
 
 const EmojisListComponent = () => {
-
-        useEffect(() => {
-                loadUpMovies()
-        })
-
-        const dispatch = useDispatch()
-        // const emojisLoading = useSelector(state => state.emojisRed.emojisLoading)
-
-        const loadUpMovies = () => {
-                dispatch(loadEmojisRequest())
-                dispatch(addLoadedEmojis(emojiData))
-        }
         
         const renderEmojis = emojiData.map((emoji, index) => {
                 if (!!emoji.variants) {
