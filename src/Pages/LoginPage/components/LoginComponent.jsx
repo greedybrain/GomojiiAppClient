@@ -23,7 +23,8 @@ const LoginComponent = ({ history }) => {
         const handleSubmit = event => {
                 event.preventDefault()
                 dispatch(loginUserThunk(email, password, history))
-                history.replace('/')
+                setEmail('')
+                setPassword('')
         }
 
         const showErrorMessage = () => {
