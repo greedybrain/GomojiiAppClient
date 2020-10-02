@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { signupUserThunk } from '../../../Store/middleware/authThunk'
 
 const SignupComponent = ({ history }) => {
         const [email, setEmail] = useState('')
@@ -25,7 +26,10 @@ const SignupComponent = ({ history }) => {
 
         const handleSubmit = event => {
                 event.preventDefault()
-                history.replace('/')
+                dispatch(signupUserThunk(email, password, passwordConfirmation, history))
+                setEmail('')
+                setPassword('')
+                setPasswordConfirmation('')
         }
 
         const showErrorMessage = () => {
@@ -80,7 +84,7 @@ const SignupComponent = ({ history }) => {
                                         />
                                 </div>
                                 <div className="submit_btn">
-                                        <button>Login</button>
+                                        <button>Signup</button>
                                 </div>
                         </form>
                 )
