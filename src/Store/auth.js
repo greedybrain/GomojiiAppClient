@@ -1,3 +1,5 @@
+import { act } from "react-dom/test-utils"
+
 //! REDUCER
 const initialState = {
         user: {},
@@ -12,17 +14,20 @@ export default function authReducer(state = initialState, action) {
                                 ...state,
                                 user: action.payload.userData,
                                 loggedIn: action.payload.loggedIn,
-                                lastStatusCheck: action.payload.lastStatusCheck
                         }
-                
+                case SIGNUP_USER:
+                        return {
+                                ...state,
+                                user: action.payload.userData,
+                                loggedIn: true
+                        }
                 case LOGIN_USER:
                         return {
                                 ...state,
                                 user: action.payload.userData,
                                 loggedIn: true,
-                                lastStatusCheck: action.payload.lastStatusCheck
                         }
-                case CATCH_FAILED_LOGIN_ERRORS:
+                case CATCH_FAILED_ERRORS:
                         return {
                                 ...state,
                                 error: action.payload.error,
@@ -41,9 +46,10 @@ export default function authReducer(state = initialState, action) {
 
 //! TYPES 
 const CHECK_USER_LOGGED_IN_STATUS = "CHECK_USER_LOGGED_IN_STATUS"
+const SIGNUP_USER = "SIGNUP_USER"
 const LOGIN_USER = "LOGIN_USER"
-const CATCH_FAILED_LOGIN_ERRORS = "CATCH_FAILED_LOGIN_ERRORS"
 const LOGOUT_USER = "LOGOUT_USER"
+const CATCH_FAILED_ERRORS = "CATCH_FAILED_ERRORS"
 
 //! CREATORS
 export const checkUserLoggedInStatus = (userData, loggedIn) => ({ // adding user data if logged in already
@@ -54,6 +60,13 @@ export const checkUserLoggedInStatus = (userData, loggedIn) => ({ // adding user
         }
 })
 
+export const signupUser = userData => ({
+        type: SIGNUP_USER,
+        payload: {
+                userData
+        }
+})
+
 export const loginUser = userData => ({ 
         type: LOGIN_USER,
         payload: {
@@ -61,8 +74,8 @@ export const loginUser = userData => ({
         }
 })
 
-export const catchFailedLoginErrors = error => ({
-        type: CATCH_FAILED_LOGIN_ERRORS,
+export const catchFailedErrors = error => ({
+        type: CATCH_FAILED_ERRORS,
         payload: {
                 error
         }
