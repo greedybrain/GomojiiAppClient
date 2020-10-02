@@ -8,7 +8,7 @@ function App() {
   const dispatch = useDispatch()
   const user = useSelector(state => ({
     loggedIn: state.authRed.loggedIn
-}))
+  }))
 
   useEffect(() => {
     dispatch(checkLoggedInStatusThunk())
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <HeaderContainer user={user} />
+      <HeaderContainer />
       <Routes />
     </div>
   );
