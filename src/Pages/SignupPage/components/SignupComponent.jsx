@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
+//! BUILT IN
+import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+//! CUSTOM
+import Wallpaper from '../../../Global/components/Wallpaper'
 import { signupUserThunk } from '../../../Store/middleware/authThunk'
+import '../../../Assets/signup.css'
+import { Link } from 'react-router-dom'
 
-const SignupComponent = ({ history }) => {
+const SignupComponent = ({ history, randomEmoji }) => {
         const [email, setEmail] = useState('')
         const [password, setPassword] = useState('') 
         const [passwordConfirmation, setPasswordConfirmation] = useState('') 
+        const refEmail = useRef(null)
+        const refPassword= useRef(null)
+        const refPasswordConfirm = useRef(null)
 
         const dispatch = useDispatch()
 
@@ -34,8 +42,14 @@ const SignupComponent = ({ history }) => {
 
         const showErrorMessage = () => {
                 if (user.error) {
+                        refEmail.current.style.border = "1px solid #ff4848"
+                        refEmail.current.classList.add('animate__animated', 'animate__headShake')
+                        refPassword.current.style.border = "1px solid #ff4848"
+                        refPassword.current.classList.add('animate__animated', 'animate__headShake')
+                        refPasswordConfirm.current.style.border = "1px solid #ff4848"
+                        refPasswordConfirm.current.classList.add('animate__animated', 'animate__headShake')
                         return (
-                                <div className="error animate__animated animate__slideInDown animate__faster">
+                                <div className="error animate__animated animate__slideInDown animate__faster" style={{ textAlign: 'center', marginBottom: "10px", fontSize: "1.2rem"}}>
                                         <p style={{ color: 'red', fontWeight: 'bolder' }}>
                                                 { user.error }
                                         </p>
@@ -47,48 +61,61 @@ const SignupComponent = ({ history }) => {
         }
 
         return (
-                user.loggedIn 
-                ?
-                (
-                        null
-                )
-                :
-                (
-                        <form onSubmit={handleSubmit}>
-                                { showErrorMessage() }
-                                <div className="email">
-                                        <input 
-                                                type="email" 
-                                                name="email" 
-                                                placeholder="Email"
-                                                value={email}
-                                                onChange={handleChange}
-                                        />
-                                </div>
-                                <div className="password">
-                                        <input 
-                                                type="password"
-                                                name="password"
-                                                placeholder="Password"
-                                                value={password}
-                                                onChange={handleChange}
-                                        />
-                                </div>
-                                <div className="password_confirmation">
-                                        <input 
-                                                type="password"
-                                                name="password_confirmation"
-                                                placeholder="Confirm Password"
-                                                value={passwordConfirmation}
-                                                onChange={handleChange}
-                                        />
-                                </div>
-                                <div className="submit_btn">
-                                        <button>Signup</button>
-                                </div>
-                        </form>
-                )
-                
+                <div className="signup_page">
+                        <Wallpaper />
+                        {
+                                user.loggedIn 
+                                ?
+                                (
+                                        null
+                                )
+                                :
+                                (
+                                        <form onSubmit={handleSubmit}>
+                                                <h1>Signup</h1>
+                                                <div className="form_content">
+                                                        { showErrorMessage() }
+                                                        <div className="email field" ref={refEmail}>
+                                                                <input 
+                                                                        type="email" 
+                                                                        name="email" 
+                                                                        placeholder="Email"
+                                                                        value={email}
+                                                                        onChange={handleChange}
+                                                                />
+                                                        </div>
+                                                        <div className="password field" ref={refPassword}>
+                                                                <input 
+                                                                        type="password"
+                                                                        name="password"
+                                                                        placeholder="Password"
+                                                                        value={password}
+                                                                        onChange={handleChange}
+                                                                />
+                                                        </div>
+                                                        <div className="password_confirmation field" ref={refPasswordConfirm}>
+                                                                <input 
+                                                                        type="password"
+                                                                        name="password_confirmation"
+                                                                        placeholder="Confirm Password"
+                                                                        value={passwordConfirmation}
+                                                                        onChange={handleChange}
+                                                                />
+                                                        </div>
+                                                        <div className="submit_btn">
+                                                                <button>Signup</button>
+                                                        </div>
+                                                        <div className="have_account_already">
+                                                                <p>Have an account already? <Link to='/login'>Login</Link></p>
+                                                        </div>
+                                                </div>
+                                                <div className="form_footer">
+                                                        <span aria-label="copyright emoji" role="img">©️</span> 2020 Gomojii
+                                                </div>
+                                        </form>
+                                )
+                        }
+                </div>
         )
 }
 
