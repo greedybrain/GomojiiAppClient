@@ -1,0 +1,125 @@
+div.signup_page {
+        display: flex;
+        height: 100vh;
+        div.wallpaper {
+                background-image: url('/images/emoji-bg-1.png');
+                background-repeat: repeat;
+                background-position: center;
+                background-size: contain;
+                width: 50vw;
+                height: 100%;
+                position: relative;
+        }
+        div.wallpaper_overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                width: 50vw;
+                height: 100%;
+                background-color: #333333ef;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                div.image {
+                        width: 40vw;
+                        margin-bottom: 100px;
+                        text-align: center;
+
+                        img {
+                                width: 100%;
+                        }
+                        p.tagline {
+                                font-size: 2rem;
+                                color: #fff;
+                                text-align: center;
+                                letter-spacing: 2px;
+                        }
+                }
+        }
+        form {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                -webkit-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,0.7);
+                -moz-box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,0.7);
+                box-shadow: inset 0px 0px 9px -1px rgba(0,0,0,0.7);
+                position: relative;
+
+                h1 {
+                        margin-bottom: 10px;
+                        font-size: 3rem;
+                }
+
+                div.form_content {
+                        width: 65%;
+                        margin-bottom: 50px;
+                        div.field {
+                                border: 1px solid #33333356;
+                                height: 60px;
+                                margin-bottom: 15px;
+                                border-radius: 5px;
+                                
+                                input {
+                                        width: 100%;
+                                        height: 100%;
+                                        border: 0;
+                                        padding-left: 10px;
+                                        font-size: 1.5rem;
+                                        border-radius: 4px;
+                                        font-family: 'Baloo 2', cursive;
+
+                                        &::placeholder {
+                                                color: #a8a8a8;
+                                        }
+                                }
+                        }
+
+                        div.remember_me {
+                                margin-bottom: 10px;
+
+                                label {
+                                        font-size: 1.2rem;
+                                        color: #8a8a8a;
+                                }
+                        }
+
+                        div.submit_btn {
+                                width: 100%;
+                                height: 60px;
+                                border-radius: 5px;
+
+                                button {
+                                        width: 100%;
+                                        height: 100%;
+                                        border: none;
+                                        border-radius: 4px;
+                                        font-size: 1.5rem;
+                                        background-color: #333;
+                                        color: #fff;
+                                        cursor: pointer;
+                                        font-family: 'Baloo 2', cursive;
+                                }
+                        }
+
+                        div.have_account_already {
+                                margin-top: 10px;
+
+                                a {
+                                        color: rgb(199, 163, 2);;
+                                }
+                        }
+                }
+
+                div.form_footer {
+                        font-size: 1.4rem;
+                        color: rgba(51, 51, 51, 0.781);
+                        position: absolute;
+                        bottom: 10px;
+                }
+
+        }
+}
