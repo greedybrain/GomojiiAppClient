@@ -12,6 +12,13 @@ const Routes = () => {
         const user = useSelector(state => ({
                 loggedIn: state.authRed.loggedIn
         }))
+
+        const randomizeEmojiForLogin = () => {
+                let emojiArr = ['☺️', '🤠', '💩', '🤖', '👻', '🤯', '😈', '🤡', '🙀', '🤩']
+                return emojiArr[Math.floor(Math.random() * emojiArr.length)]
+        }
+
+        const randomEmoji = randomizeEmojiForLogin()
         
         return (
                 <>
@@ -19,12 +26,12 @@ const Routes = () => {
                                 <Route 
                                         exact
                                         path="/login"
-                                        render={ routerProps => user.loggedIn ? <Redirect to="/" /> : <LoginComponent { ...  routerProps } /> }
+                                        render={ routerProps => user.loggedIn ? <Redirect to="/" /> : <LoginComponent { ...  routerProps } randomEmoji={randomEmoji} /> }
                                 />
                                 <Route 
                                         exact
                                         path="/signup"
-                                        render={ routerProps => user.loggedIn ? <Redirect to="/" /> : <SignupComponent { ...  routerProps } /> }
+                                        render={ routerProps => user.loggedIn ? <Redirect to="/" /> : <SignupComponent { ...  routerProps } randomEmoji={randomEmoji} /> }
                                 />
                                 <Route 
                                         path="/not_found"
