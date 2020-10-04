@@ -1,11 +1,15 @@
 import axios from 'axios'
+import { _get } from '../../Utils/config'
 import { catchFailedErrors, checkUserLoggedInStatus, loginUser, logoutUser, signupUser } from '../auth'
+
+
+const { baseUrl, loginCheck, signup, login, logout } = _get.endpoints
 
 export const checkLoggedInStatusThunk = () => {
         return  async dispatch => {
                 try {
                         const response = await axios(
-                                'http://localhost:3001/api/v1/login_check',
+                                `${baseUrl}/${loginCheck}`,
                                 { withCredentials: true }
                         )
                         const { user, logged_in } = response.data
@@ -22,21 +26,20 @@ export const signupUserThunk = (email, password, password_confirmation, history)
         return async dispatch => {
                 try {
                         const response = await axios.post(
-                                'http://localhost:3001/api/v1/signup',
+                                `${baseUrl}/${signup}`,
                                 { email, password, password_confirmation },
                                 { withCredentials: true }
                         )
                         let { user, email_error, password_error, password_confirmation_error } = response.data
-                
-                        if (user.data) {
+                        if (user) {
                                 dispatch(signupUser(user.data))
                                 history.replace('/')
                         }
-                        if (email_error.length > 0) {
+                        if (email_error && email_error.length > 0) {
                                 dispatch(catchFailedErrors(`Email ${email_error[0]}`))
                                 history.replace('/signup')
                         } 
-                        if (password_error.length > 0) {
+                        if (password_error && password_error.length > 0) {
                                 dispatch(catchFailedErrors(`Password ${password_error[0]}`))
                                 history.replace('/signup')
                         } 
@@ -54,7 +57,7 @@ export const loginUserThunk = (email, password, history) => {
         return  async (dispatch) => {
                 try {
                         const response = await axios.post(
-                                'http://localhost:3001/api/v1/login',
+                                `${baseUrl}/${login}`,
                                 { email, password },
                                 { withCredentials: true }
                         )
@@ -73,11 +76,11 @@ export const loginUserThunk = (email, password, history) => {
         }
 }
 
-export const logoutUserThunk = (history) => {
+export const logoutUserThunk = history => {
         return async dispatch => {
                 try {
                         await axios.delete(
-                                'http://localhost:3001/api/v1/logout',
+                                `${baseUrl}/${logout}`,
                                 { withCredentials: true }
                         )
                         dispatch(logoutUser())
