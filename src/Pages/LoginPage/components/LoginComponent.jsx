@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+//!BUILT IN
+import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+//! CUSTOM
+import Wallpaper from '../../../Global/components/Wallpaper'
 import { loginUserThunk } from '../../../Store/middleware/authThunk'
+import '../../../Assets/login.css'
 
-const LoginComponent = ({ history }) => {
+const LoginComponent = ({ history, randomEmoji }) => {
         const [email, setEmail] = useState('')
         const [password, setPassword] = useState('')
+        const refEmail = useRef(null)
+        const refPassword = useRef(null)
 
         const dispatch = useDispatch()
         const user = useSelector(state => ({
@@ -29,8 +36,16 @@ const LoginComponent = ({ history }) => {
 
         const showErrorMessage = () => {
                 if (user.error) {
+                        refEmail.current.style.border = "1px solid #ff4848"
+                        refEmail.current.classList.add('animate__animated', 'animate__headShake')
+                        refPassword.current.style.border = "1px solid #ff4848"
+                        refPassword.current.classList.add('animate__animated', 'animate__headShake')
+                        setTimeout(() => {
+                                refEmail.current.classList.remove('animate__animated')
+                                refPassword.current.classList.remove('animate__animated')
+                        }, 1500);
                         return (
-                                <div className="error animate__animated animate__slideInDown animate__faster">
+                                <div className="error animate__animated animate__slideInDown animate__faster" style={{ textAlign: 'center', marginBottom: "10px", fontSize: "1.2rem"}}>
                                         <p style={{ color: 'red', fontWeight: 'bolder' }}>
                                                 { user.error }
                                         </p>
@@ -42,39 +57,52 @@ const LoginComponent = ({ history }) => {
         }
 
         return (
-                user.loggedIn 
-                ?
-                (
-                        null
-                )
-                :
-                (
-                        <form onSubmit={handleSubmit}>
-                                { showErrorMessage() }
-                                <div className="email">
-                                        <input 
-                                                type="email" 
-                                                name="email" 
-                                                placeholder="Email"
-                                                value={email}
-                                                onChange={handleChange}
-                                        />
-                                </div>
-                                <div className="password">
-                                        <input 
-                                                type="password"
-                                                name="password"
-                                                placeholder="Password"
-                                                value={password}
-                                                onChange={handleChange}
-                                        />
-                                </div>
-                                <div className="submit_btn">
-                                        <button>Login</button>
-                                </div>
-                        </form>
-                )
-                
+                <div className="login_page">
+                        <Wallpaper />
+                        {
+                                user.loggedIn 
+                                ?
+                                (
+                                        null
+                                )
+                                :
+                                (
+                                        <form onSubmit={handleSubmit}>
+                                                <h1>L<span style={{ display: "inline-block" }} className="animate__animated animate__bounce animate__infinite">{randomEmoji}</span>gin</h1>
+                                                <div className="form_content">
+                                                        { showErrorMessage() }
+                                                        <div className="email field" ref={refEmail}>
+                                                                <input 
+                                                                        type="email" 
+                                                                        name="email" 
+                                                                        placeholder="Email"
+                                                                        value={email}
+                                                                        onChange={handleChange}
+                                                                />
+                                                        </div>
+                                                        <div className="password field" ref={refPassword}>
+                                                                <input 
+                                                                        type="password"
+                                                                        name="password"
+                                                                        placeholder="Password"
+                                                                        value={password}
+                                                                        onChange={handleChange}
+                                                                />
+                                                        </div>
+                                                        <div className="submit_btn">
+                                                                <button>Login</button>
+                                                        </div>
+                                                        <div className="dont_have_an_account">
+                                                                <p>Don't have an account? <Link to='/signup'>Signup</Link></p>
+                                                        </div>
+                                                </div>
+                                                <div className="form_footer">
+                                                        <span aria-label="copyright emoji" role="img">©️</span> 2020 Gomojii
+                                                </div>
+                                        </form>
+                                )
+                        }
+                </div>
         )
 }
 
