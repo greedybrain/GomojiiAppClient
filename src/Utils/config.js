@@ -4,6 +4,8 @@ export const _get = {
                 loginCheck: 'login_check',
                 signup: 'signup',
                 login: 'login',
-                logout: 'logout'
+                logout: 'logout',
+                emojiApi: "https://emoji-api.com/emojis?access_key=24e47f404645206a64862b6f8cc6ec4ada2bc089",
+                emojis: 'emojis'
         }
 }
