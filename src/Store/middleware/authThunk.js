@@ -31,6 +31,10 @@ export const signupUserThunk = (email, password, password_confirmation, history)
                                 { withCredentials: true }
                         )
                         let { user, email_error, password_error, password_confirmation_error } = response.data
+                        if(email === '' && password === '' && password_confirmation === '') {
+                                dispatch(catchFailedErrors("All fields are required"))
+                                return;
+                        }
                         if (user) {
                                 dispatch(signupUser(user.data))
                                 history.replace('/')
@@ -38,14 +42,17 @@ export const signupUserThunk = (email, password, password_confirmation, history)
                         if (email_error && email_error.length > 0) {
                                 dispatch(catchFailedErrors(`Email ${email_error[0]}`))
                                 history.replace('/signup')
+                                return
                         } 
                         if (password_error && password_error.length > 0) {
                                 dispatch(catchFailedErrors(`Password ${password_error[0]}`))
                                 history.replace('/signup')
+                                return
                         } 
                         if (password_confirmation_error) {
                                 dispatch(catchFailedErrors(password_confirmation_error))
                                 history.replace('/signup')
+                                return
                         } 
                 } catch(e) {
                         console.log(e)
