@@ -6,6 +6,7 @@ import Wallpaper from '../../../Global/components/Wallpaper'
 import { signupUserThunk } from '../../../Store/middleware/authThunk'
 import '../../../Assets/signup.css'
 import { Link } from 'react-router-dom'
+import GoHome from '../../../Global/components/GoHome'
 
 const SignupComponent = ({ history, randomEmoji }) => {
         const [email, setEmail] = useState('')
@@ -62,6 +63,7 @@ const SignupComponent = ({ history, randomEmoji }) => {
 
         return (
                 <div className="signup_page">
+                        <GoHome />
                         <Wallpaper />
                         {
                                 user.loggedIn 
