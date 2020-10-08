@@ -10,7 +10,7 @@ div.signup_page div.wallpaper {
   background-repeat: repeat;
   background-position: center;
   background-size: contain;
-  width: 50vw;
+  width: 60vw;
   height: 100%;
   position: relative;
 }
@@ -20,7 +20,7 @@ div.signup_page div.wallpaper_overlay {
   top: 0;
   left: 0;
   z-index: 100;
-  width: 50vw;
+  width: 60vw;
   height: 100%;
   background-color: #333333ef;
   display: -webkit-box;
@@ -36,7 +36,6 @@ div.signup_page div.wallpaper_overlay {
 
 div.signup_page div.wallpaper_overlay div.image {
   width: 40vw;
-  margin-bottom: 100px;
   text-align: center;
 }
 
@@ -47,12 +46,14 @@ div.signup_page div.wallpaper_overlay div.image img {
 div.signup_page div.wallpaper_overlay div.image p.tagline {
   font-size: 2rem;
   color: #fff;
-  text-align: center;
   letter-spacing: 2px;
+  position: relative;
+  bottom: 20px;
+  text-align: center;
 }
 
 div.signup_page form {
-  width: 50%;
+  width: 40vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,0 +1,117 @@
+header {
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30px;
+}
+
+header form {
+  width: 35vw;
+}
+
+header form div.search_bar_area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #33333356;
+  height: 50px;
+  border-radius: 30px;
+}
+
+header form div.search_bar_area div.search_bar {
+  width: 90%;
+  height: 100%;
+}
+
+header form div.search_bar_area div.search_bar input {
+  border-radius: 29px;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  font-family: 'Baloo 2', cursive;
+  background-color: none;
+}
+
+header form div.search_bar_area div.submit_btn {
+  width: 10%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header form div.search_bar_area div.submit_btn button {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  padding-right: 10px;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-left: 1px solid #24242462;
+}
+
+header ul li {
+  background-color: transparent;
+  border-radius: 100px;
+  text-align: center;
+  margin-left: 20px;
+}
+
+header ul li.favs i {
+  color: #ff5050;
+}
+
+header ul li.favs:hover ::after {
+  content: "Favorites";
+  font-size: 1rem;
+  margin-left: 5px;
+  position: relative;
+  bottom: 5px;
+  font-family: 'Baloo 2', cursive;
+}
+
+header ul li.favs:hover i {
+  font-size: 1.5rem;
+}
+
+header ul li.logout_btn {
+  color: #7d008db7;
+}
+
+header ul li.logout_btn:hover ::after {
+  content: "Logout";
+  font-size: 1rem;
+  margin-left: 5px;
+  position: relative;
+  bottom: 5px;
+  font-family: 'Baloo 2', cursive;
+}
+
+header ul li.logout_btn:hover i {
+  font-size: 1.5rem;
+}
+
+header ul li i {
+  font-size: 1.8rem;
+}

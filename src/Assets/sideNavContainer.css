@@ -1,0 +1,81 @@
+div.side_nav_container {
+  width: 15vw;
+  border-right: 1px solid #333;
+  height: 100vh;
+  background-color: #1b1b1b;
+  min-width: 200px;
+}
+
+div.side_nav_container ul {
+  height: 98vh;
+  overflow-y: scroll;
+}
+
+div.side_nav_container ul li.logo_item {
+  position: relative;
+}
+
+div.side_nav_container ul li.logo_item div.logo {
+  width: 150px;
+  margin: 0 auto;
+}
+
+div.side_nav_container ul li.logo_item div.logo img {
+  display: block;
+  width: 100%;
+}
+
+div.side_nav_container ul li.logo_item:hover {
+  -webkit-animation: smileFaceAnimation .1s ease-in .1s forwards;
+          animation: smileFaceAnimation .1s ease-in .1s forwards;
+}
+
+div.side_nav_container ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  cursor: pointer;
+}
+
+div.side_nav_container ul li div.cat_name {
+  margin-left: 10px;
+}
+
+div.side_nav_container ul li div.emojicon {
+  font-size: 1.3rem;
+}
+
+div.side_nav_container ul li div {
+  font-size: 1.2rem;
+}
+
+div.side_nav_container ul li:hover:not(:first-child) {
+  background-color: #383838d8;
+}
+
+div.side_nav_container ul li:not(:first-child) {
+  padding: 10px 10px 10px 40px;
+}
+
+@-webkit-keyframes smileFaceAnimation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+
+@keyframes smileFaceAnimation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
