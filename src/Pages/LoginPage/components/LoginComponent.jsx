@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom'
 import Wallpaper from '../../../Global/components/Wallpaper'
 import { loginUserThunk } from '../../../Store/middleware/authThunk'
 import '../../../Assets/login.css'
+import GoHome from '../../../Global/components/GoHome'
 
-const LoginComponent = ({ history, randomEmoji }) => {
+const LoginComponent = ({ history }) => {
         const [email, setEmail] = useState('')
         const [password, setPassword] = useState('')
         const refEmail = useRef(null)
@@ -18,6 +19,12 @@ const LoginComponent = ({ history, randomEmoji }) => {
                 error: state.authRed.error,
                 loggedIn: state.authRed.loggedIn
         }))
+
+        const randomizeEmojiForLogin = () => {
+                let emojiArr = ['☺️', '🤠', '💩', '🤖', '👻', '🤯', '😈', '🤡', '🙀', '🤩']
+                return emojiArr[Math.floor(Math.random() * emojiArr.length)]
+        }
+        const randomEmoji = randomizeEmojiForLogin()
 
         const handleChange = event => {
                 if (event.target.name === 'email') {
@@ -40,10 +47,6 @@ const LoginComponent = ({ history, randomEmoji }) => {
                         refEmail.current.classList.add('animate__animated', 'animate__headShake')
                         refPassword.current.style.border = "1px solid #ff4848"
                         refPassword.current.classList.add('animate__animated', 'animate__headShake')
-                        setTimeout(() => {
-                                refEmail.current.classList.remove('animate__animated')
-                                refPassword.current.classList.remove('animate__animated')
-                        }, 1500);
                         return (
                                 <div className="error animate__animated animate__slideInDown animate__faster" style={{ textAlign: 'center', marginBottom: "10px", fontSize: "1.2rem"}}>
                                         <p style={{ color: 'red', fontWeight: 'bolder' }}>
@@ -58,6 +61,7 @@ const LoginComponent = ({ history, randomEmoji }) => {
 
         return (
                 <div className="login_page">
+                        <GoHome />
                         <Wallpaper />
                         {
                                 user.loggedIn 
