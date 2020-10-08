@@ -1,28 +1,85 @@
 //! REDUCER
 const initialState = {
-        emojis: []
+        emojis: [],
+        results: [],
+        loading: false
 }
 
 export default function emojisReducer(state = initialState, action) {
         switch(action.type) {
-                case ADD_LOADED_EMOJIS:
+                case REQUESTING_EMOJIS:
+                        return {
+                                ...state,
+                                loading: true
+                        }
+                case LOAD_EMOJIS:
                         return {
                                 ...state,
                                 emojis: action.payload.emojis,
+                                loading: false
+                        }
+                case FILTER_EMOJIS_REQUEST:
+                        return {
+                                ...state,
+                                loading: true
+                        }
+                case FILTER_EMOJIS:
+                        return {
+                                ...state,
+                                results: action.payload.emojis,
+                                loading: false
                         }
                 default:
                         return state
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 }
 
 //! TYPES 
-const ADD_LOADED_EMOJIS = "ADD_LOADED_EMOJIS"
-// const SEARCH_FOR_EMOJI = "SEARCH_FOR_EMOJI"
-// const FILTER_EMOJIS_BY_CATEGORY = "FILTER_EMOJIS_BY_CATEGORY"
+const LOAD_EMOJIS = "LOAD_EMOJIS"
+const REQUESTING_EMOJIS = "REQUESTING_EMOJIS"
+const FILTER_EMOJIS = "FILTER_EMOJIS"
+const FILTER_EMOJIS_REQUEST = "FILTER_EMOJIS_REQUEST"
 
 //! CREATORS
-export const addLoadedEmojis = emojis => ({ // adding emojis after loading is finished
-        type: ADD_LOADED_EMOJIS,
+export const requestingEmojis = () => ({
+        type: REQUESTING_EMOJIS
+})
+
+export const loadEmojis = emojis => ({ // adding emojis after loading is finished
+        type: LOAD_EMOJIS,
+        payload: {
+                emojis
+        }
+})
+
+export const filterEmojisRequest = () => ({
+        type: FILTER_EMOJIS_REQUEST
+})
+
+export const filterEmojis = emojis => ({
+        type: FILTER_EMOJIS,
         payload: {
                 emojis
         }
