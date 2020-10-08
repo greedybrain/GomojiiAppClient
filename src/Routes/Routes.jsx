@@ -1,6 +1,6 @@
 //! REACT  && REDUXSTUFF
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Redirect, Route, Switch } from 'react-router-dom'
 //! MY COMPONENTS
 import HomeContainer from '../Pages/HomePage/containers/HomeContainer'
@@ -8,18 +8,11 @@ import LoginComponent from '../Pages/LoginPage/components/LoginComponent'
 import SignupComponent from '../Pages/SignupPage/components/SignupComponent'
 import NotFoundContainer from '../Global/containers/NotFoundContainer'
 
-const Routes = () => {
+const Routes = ({ randomEmoji }) => {     
         const user = useSelector(state => ({
                 loggedIn: state.authRed.loggedIn
-        }))
+        }))   
 
-        const randomizeEmojiForLogin = () => {
-                let emojiArr = ['☺️', '🤠', '💩', '🤖', '👻', '🤯', '😈', '🤡', '🙀', '🤩']
-                return emojiArr[Math.floor(Math.random() * emojiArr.length)]
-        }
-
-        const randomEmoji = randomizeEmojiForLogin()
-        
         return (
                 <>
                         <Switch>
