@@ -13,7 +13,7 @@ const Logout = () => {
         const handleLogout = () => {
                 dispatch(logoutUserThunk(history))
         }
-        return user.loggedIn ? <button onClick={handleLogout}>Logout</button> : null
+        return <li className="logout_btn" onClick={handleLogout}><i className="fas fa-sign-out-alt"></i></li>
 }
 
 export default Logout
