@@ -50,7 +50,7 @@ const SignupComponent = ({ history, randomEmoji }) => {
                         refPasswordConfirm.current.style.border = "1px solid #ff4848"
                         refPasswordConfirm.current.classList.add('animate__animated', 'animate__headShake')
                         return (
-                                <div className="error animate__animated animate__slideInDown animate__faster" style={{ textAlign: 'center', marginBottom: "10px", fontSize: "1.2rem"}}>
+                                <div className="error animate__animated animate__slideInDown animate__faster" style={{ textAlign: 'center', marginBottom: "10px", display: "1.2rem"}}>
                                         <p style={{ color: 'red', fontWeight: 'bolder' }}>
                                                 { user.error }
                                         </p>
