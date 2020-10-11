@@ -3,7 +3,9 @@ div.side_nav_container {
   border-right: 1px solid #333;
   height: 100vh;
   background-color: #1b1b1b;
-  min-width: 200px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 div.side_nav_container ul {

@@ -3,7 +3,8 @@ div.side_nav_container {
         border-right: 1px solid #333;
         height: 100vh;
         background-color: #1b1b1b;
-        min-width: 200px;
+        position: sticky;
+        top: 0;
 
         ul {
                 height: 98vh;
@@ -25,7 +26,6 @@ div.side_nav_container {
                 }
                 li {
                         display: flex;
-                        
                         color: #fff;
                         cursor: pointer;
 

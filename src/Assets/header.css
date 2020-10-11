@@ -1,7 +1,7 @@
 header {
   position: relative;
   width: 100%;
-  height: 10vh;
+  height: 12vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,6 +16,7 @@ header {
 
 header form {
   width: 35vw;
+  min-width: 200px;
 }
 
 header form div.search_bar_area {
@@ -36,7 +37,7 @@ header form div.search_bar_area div.search_bar {
 }
 
 header form div.search_bar_area div.search_bar input {
-  border-radius: 29px;
+  border-radius: 29px 0 0 29px;
   outline: none;
   border: none;
   width: 100%;
@@ -49,69 +50,110 @@ header form div.search_bar_area div.search_bar input {
 
 header form div.search_bar_area div.submit_btn {
   width: 10%;
-  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-radius: 0 29px 29px 0;
 }
 
 header form div.search_bar_area div.submit_btn button {
   width: 100%;
   border: none;
   outline: none;
-  background-color: transparent;
+  background-color: #fff;
   font-size: 1.2rem;
   padding-right: 10px;
+  border-radius: 0 29px 29px 0;
+  position: relative;
+  right: 10px;
 }
 
 header ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-left: 1px solid #24242462;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header ul li {
-  background-color: transparent;
-  border-radius: 100px;
-  text-align: center;
-  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
 }
 
-header ul li.favs i {
-  color: #ff5050;
+header ul li:not(:first-child) {
+  margin-left: 30px;
 }
 
-header ul li.favs:hover ::after {
+header ul li.results, header ul li.home, header ul li.favs, header ul li.logout_btn, header ul li.help {
+  font-size: 1.5rem;
+}
+
+header ul li.results::after, header ul li.home::after, header ul li.favs::after, header ul li.logout_btn::after, header ul li.help::after {
+  font-size: 1.2rem;
+  margin-left: 5px;
+  position: relative;
+  font-family: 'Baloo 2', cursive;
+}
+
+header ul li.results {
+  border-right: 1px solid #a7a7a773;
+  padding: 0 45px 0 10px;
+  font-size: 1.2rem;
+}
+
+header ul li.home::after {
+  content: "Home";
+}
+
+header ul li.favs::after {
   content: "Favorites";
-  font-size: 1rem;
-  margin-left: 5px;
-  position: relative;
-  bottom: 5px;
-  font-family: 'Baloo 2', cursive;
 }
 
-header ul li.favs:hover i {
-  font-size: 1.5rem;
-}
-
-header ul li.logout_btn {
-  color: #7d008db7;
-}
-
-header ul li.logout_btn:hover ::after {
+header ul li.logout_btn::after {
   content: "Logout";
-  font-size: 1rem;
-  margin-left: 5px;
-  position: relative;
-  bottom: 5px;
-  font-family: 'Baloo 2', cursive;
 }
 
-header ul li.logout_btn:hover i {
-  font-size: 1.5rem;
+header ul li.help {
+  border-left: 1px solid #a7a7a773;
+  padding-left: 15px;
 }
 
-header ul li i {
-  font-size: 1.8rem;
+header ul li.help::after {
+  content: '?';
+}
+
+header ul li.menu_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  width: 25px;
+}
+
+header ul li.menu_btn div {
+  width: 100%;
+  height: 3px;
+  margin: 2px 0;
+  border: 2px solid #1b1b1b;
+  border-radius: 10px;
+}
+
+header ul li.menu_btn div.line_2 {
+  width: 75%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }

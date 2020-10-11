@@ -1,7 +1,8 @@
 header {
         position: relative;
+        // top: 1px;
         width: 100%;
-        height: 10vh;
+        height: 12vh;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -9,18 +10,20 @@ header {
         
         form {
                 width: 35vw;
+                min-width: 200px;
                 div.search_bar_area {
                         display: flex;
                         justify-content: space-between;
                         border: 1px solid #33333356;
                         height: 50px;
                         border-radius: 30px;
+                        
 
                         div.search_bar {
                                 width: 90%;
                                 height: 100%;
                                 input {
-                                        border-radius: 29px;
+                                        border-radius: 29px 0 0 29px;
                                         outline: none;
                                         border: none;
                                         width: 100%;
@@ -33,72 +36,103 @@ header {
                         }
                         div.submit_btn {
                                 width: 10%;
-                                text-align: center;
                                 display: flex;
+                                border-radius: 0 29px 29px 0;
                                 button {
                                         width: 100%;
                                         border: none;
                                         outline: none;
-                                        background-color: transparent;
+                                        background-color: #fff;
                                         font-size: 1.2rem;
                                         padding-right: 10px;
-                                        
+                                        border-radius: 0 29px 29px 0;
+                                        position: relative;
+                                        right: 10px;
                                 }
                         }
                 }
         }
         ul {
                 display: flex;
-                border-left: 1px solid #24242462;
+                align-items: center;
 
                 li {
-                        background-color: transparent;
-                        border-radius: 100px;
-                        text-align: center;
-                        margin-left: 20px;
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+
+                        &:not(:first-child) {
+                                margin-left: 30px;
+                        }
+
+                        &.results,
+                        &.home,
+                        &.favs,
+                        &.logout_btn ,
+                        &.help{
+                                font-size: 1.5rem;
+                                &::after {
+                                        font-size: 1.2rem;
+                                        margin-left: 5px;
+                                        position: relative;
+                                        font-family: 'Baloo 2', cursive;
+                                }
+                        }
+
+                        &.results {
+                                border-right: 1px solid #a7a7a773;
+                                padding: 0 45px 0 10px;
+                                font-size: 1.2rem;
+                        }
+
+                        &.home {
+                                &::after {
+                                        content: "Home";
+                                }
+                        }
 
                         &.favs {
-                                i {
-                                        color: #ff5050;
-                                }
-
-                                &:hover {
-                                        ::after {
-                                                content: "Favorites";
-                                                font-size: 1rem;
-                                                margin-left: 5px;
-                                                position: relative;
-                                                bottom: 5px;
-                                                font-family: 'Baloo 2', cursive;
-                                                
-                                        }
-        
-                                        i {
-                                                font-size: 1.5rem;
-                                        }
+                                &::after {
+                                        content: "Favorites";
                                 }
                         }
                         &.logout_btn {
-                                color: #7d008db7;
-                                &:hover {
-        
-                                        ::after {
-                                                content: "Logout";
-                                                font-size: 1rem;
-                                                margin-left: 5px;
-                                                position: relative;
-                                                bottom: 5px;
-                                                font-family: 'Baloo 2', cursive;
-                                        }
-        
-                                        i {
-                                                font-size: 1.5rem;
-                                        }
+                                &::after {
+                                        content: "Logout";
                                 }
                         }
+                        &.help {
+                                border-left: 1px solid #a7a7a773;
+                                padding-left: 15px;
+                                &::after {
+                                        content: '?';
+                                }
+                        }
+                }
 
-                        i {
-                                font-size: 1.8rem;
+                li.menu_btn {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        height: 30px;
+                        width: 25px;
+                        div {
+                                width: 100%;
+                                height: 3px;
+                                margin: 2px 0;
+                                border: 2px solid #1b1b1b;;
+                                border-radius: 10px;
+
+                                &.line_1 {
+
+                                }
+                                &.line_2 {
+                                        width: 75%;
+                                        align-self: flex-end;
+                                }
+                                &.line_3 {
+                                        
+                                }
                         }
                 }
         }

@@ -1,22 +1,24 @@
 ul.emojis_container {
+  position: relative;
+  z-index: 102;
   border-right: 1px solid #d1d1d17a;
   width: 65vw;
   height: 88vh;
   overflow-y: scroll;
-  padding: 30px 60px 50px 30px;
+  padding: 10px 30px 40px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(50px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
   grid-auto-rows: 50px;
-  row-gap: 15px;
+  row-gap: 35px;
   -webkit-column-gap: 35px;
           column-gap: 35px;
   justify-items: center;
 }
 
 ul.emojis_container li {
-  font-size: 3.5rem;
+  font-size: 4rem;
   position: relative;
   cursor: pointer;
 }
@@ -37,12 +39,43 @@ ul.emojis_container li div.parent_emoji div.caret i {
 }
 
 ul.emojis_container li ul.variants_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  z-index: 102;
+  z-index: 200;
   border: 1px solid #d1d1d17a;
-  background-color: #b3b3b3;
+  background-color: #8f8f8f;
   border-radius: 5px;
   padding: 0 5px;
   overflow-y: scroll;
-  height: 22vh;
+  height: 31vh;
+}
+
+ul.emojis_container li div.save_emoji {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 101;
+  font-size: 1rem;
+  top: 35px;
+  left: -20px;
+  color: #fff;
+  background-color: #00cc11;
+  border-radius: 100px;
+  width: 24px;
+  height: 23px;
+  text-align: center;
+  cursor: pointer;
+}
+
+ul.emojis_container li div.save_emoji i {
+  display: inline-block;
 }

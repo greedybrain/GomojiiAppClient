@@ -1,0 +1,25 @@
+.dark {
+  display: inline-block;
+  font-size: 1.5rem;
+  &::after {
+    content: 'Light Mode';
+    margin-left: 10px;
+    color: #333;
+    font-size: 1rem;
+    position: relative;
+    bottom: 4px;
+  }  
+}
+
+.light {
+  display: inline-block;
+  font-size: 1.8rem;
+  &::after {
+    content: 'Dark Mode';
+    margin-left: 10px;
+    color: #fff;
+    font-size: 1rem;
+    position: relative;
+    bottom: 4px;
+  }  
+}

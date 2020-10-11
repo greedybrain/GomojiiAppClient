@@ -1,14 +1,19 @@
 div.playground_container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 102;
         width: 85vw;
-        height: 100vh;
+        // height: 100vh;
         -webkit-box-shadow: inset 0px 0px 11px -1px rgba(0,0,0,0.4);
         -moz-box-shadow: inset 0px 0px 11px -1px rgba(0,0,0,0.4);
         box-shadow: inset 0px 0px 11px -1px rgba(0,0,0,0.4);
 
         div.emojis_and_ads {
                 position: relative;
+                z-index: -1;
                 display: flex;
-                width: 100%;
+                width: 85vw;
                 div.ads {
                         width: 20vw;
                 }
