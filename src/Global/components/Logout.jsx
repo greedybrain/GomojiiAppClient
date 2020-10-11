@@ -6,14 +6,11 @@ import { logoutUserThunk } from '../../Store/middleware/authThunk'
 const Logout = () => {
         const history = useHistory()
         const dispatch = useDispatch()
-        const user = useSelector(state => ({
-                loggedIn: state.authRed.loggedIn
-              }))
 
         const handleLogout = () => {
                 dispatch(logoutUserThunk(history))
         }
-        return <li className="logout_btn" onClick={handleLogout}><i className="fas fa-sign-out-alt"></i></li>
+        return <li className="logout_btn" onClick={handleLogout}><span role='img' aria-label='logout'>✌️</span></li>
 }
 
 export default Logout
