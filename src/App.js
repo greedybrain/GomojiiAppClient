@@ -7,11 +7,12 @@ import { loadEmojisThunk } from './Store/middleware/emojisThunk';
 
 
 function App() {
+
   const dispatch = useDispatch()
   
   useEffect(() => {
-    dispatch(checkLoggedInStatusThunk())
-    dispatch(loadEmojisThunk())
+          dispatch(checkLoggedInStatusThunk())
+          // dispatch(loadEmojisThunk())
   })
 
   return (
