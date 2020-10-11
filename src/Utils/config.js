@@ -5,7 +5,9 @@ export const _get = {
                 signup: 'signup',
                 login: 'login',
                 logout: 'logout',
+                users: 'users',
+                emojis: 'emojis',
                 emojiApi: "https://emoji-api.com/emojis?access_key=24e47f404645206a64862b6f8cc6ec4ada2bc089",
-                emojis: 'emojis'
         }
 }
+// /api/v1/users/:user_id/emojis
