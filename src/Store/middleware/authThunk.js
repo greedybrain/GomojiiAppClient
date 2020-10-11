@@ -1,12 +1,13 @@
 import axios from 'axios'
 import { _get } from '../../Utils/config'
-import { catchFailedErrors, checkUserLoggedInStatus, loginUser, logoutUser, signupUser } from '../auth'
+import { catchFailedErrors, checkUserLoggedInStatus, loadUsersEmojis, loginUser, logoutUser, saveEmoji, signupUser } from '../auth'
+import { loadEmojisThunk } from './emojisThunk'
 
 
-const { baseUrl, loginCheck, signup, login, logout } = _get.endpoints
+const { baseUrl, loginCheck, signup, login, logout, emojis, users } = _get.endpoints
 
 export const checkLoggedInStatusThunk = () => {
-        return  async dispatch => {
+        return  async (dispatch, getState) => {
                 try {
                         const response = await axios(
                                 `${baseUrl}/${loginCheck}`,
@@ -75,8 +76,31 @@ export const loginUserThunk = (email, password, history) => {
                         }
                         if (user) {
                                 dispatch(loginUser(user))
+                                dispatch(loadUsersEmojis())
                                 history.replace('/')
                         } 
+                } catch(e) {
+                        console.log(e)
+                }
+        }
+}
+
+export const saveEmojiThunk = emoji_id => {
+        return async (dispatch, getState) => {
+                const user_id = getState().authRed.user.id
+                try {
+                        const response = await axios.post(
+                                `${baseUrl}/${users}/${user_id}/${emojis}`,
+                                { user_id, emoji_id },
+                                { withCredentials: true }
+                        )
+                        const emoji = response.data.favorite.data.attributes
+                        if (emoji) {
+                                // debugger
+                                dispatch(saveEmoji(emoji))
+                        }
+                        else return
+                        
                 } catch(e) {
                         console.log(e)
                 }
