@@ -7,6 +7,8 @@ import HomeContainer from '../Pages/HomePage/containers/HomeContainer'
 import LoginComponent from '../Pages/LoginPage/components/LoginComponent'
 import SignupComponent from '../Pages/SignupPage/components/SignupComponent'
 import NotFoundContainer from '../Global/containers/NotFoundContainer'
+import { checkLoggedInStatusThunk } from '../Store/middleware/authThunk'
+import { loadEmojisThunk } from '../Store/middleware/emojisThunk'
 
 const Routes = ({ randomEmoji }) => {     
         const user = useSelector(state => ({
