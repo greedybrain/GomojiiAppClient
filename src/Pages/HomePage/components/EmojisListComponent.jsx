@@ -1,14 +1,13 @@
 //! BUILT IN OR LIBRARY PACKAGE
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import ifEmoji from 'if-emoji'
 //! CUSTOM
-import EmojiChildComponent from './EmojiChildComponent'
 import '../../../Assets/emojisContainer.css'
+import Emoji from './Emoji'
 
 const EmojisListComponent = () => {
-        // const [showVariants, setShowVariants] = useState(false)
         const state = useSelector(state => ({
                 emojis: state.emojisRed.emojis,
                 loading: state.emojisRed.loading,
@@ -23,45 +22,104 @@ const EmojisListComponent = () => {
                         return state.emojis
                 }
         }
+
+        const handleCaretClick = event => {
+                let isCaret = event.target.classList.contains('caret') || event.target.classList.contains('fas')
+                let variantList = isCaret ? event.target.parentElement.parentElement.nextElementSibling : null
+                if (isCaret) {
+                        variantList.style.display = "block"
+                } 
+        }
+
+        const handleHideVariantsList = event => {
+                let isVariantCont = event.target.classList.contains('variants_container')
+                if (isVariantCont) {
+                        event.target.style.display = 'none'
+                } else {
+                        return null
+                }
+        }
         
         const renderEmojis = renderAccEmojis().map((emoji, index) => {
                 if (emoji.attributes.variants.length > 0) {
                         return (
-                                <li key={index} style={{display: "flex"}} className="emoji">
-                                        <div className="parent_emoji">
-                                                <div className="emoji" onMouseEnter={null}><EmojiChildComponent emoji={ emoji } /> </div>
-                                                <div className="caret">
-                                                        <i className="fas fa-caret-right"></i>
+                                <li 
+                                        key={index} 
+                                        style={{display: "flex"}} 
+                                        className="emoji_wrapper"
+                                >
+                                        <div 
+                                                className="parent_emoji"
+                                        >
+                                                <div 
+                                                        className="emoji" 
+                                                        onMouseEnter={handleCaretClick}
+                                                >
+                                                        <Emoji emoji={emoji} />
+                                                </div>
+                                                <div 
+                                                        className="caret"
+                                                >
+                                                        <i 
+                                                                className="fas fa-caret-right" 
+                                                                onMouseEnter={handleCaretClick}></i>
                                                 </div>
                                         </div>
-                                        {/* {
-                                                showVariants && (
-                                                        <ul className="variants_container" onMouseLeave={setShowVariants(false)}>
-                                                                <li>{<EmojiChildComponent emoji={emoji} />}</li>
-                                                                {
-                                                                        emoji.attributes.variants.map((variant, index) => {
-                                                                                return ifEmoji(variant.character) ? <li key={ index }><EmojiChildComponent emoji={variant} /></li> : null
-                                                                        })
-                                                                }
-                                                        </ul>
-                                                )
-                                        } */}
+                                        {
+                                                <ul 
+                                                        className="variants_container" 
+                                                        style={{display: 'none'}} 
+                                                        onMouseOut={handleHideVariantsList}>
+                                                        <li 
+                                                                className='variant' 
+                                                                onMouseOut={handleHideVariantsList}>
+                                                                {<Emoji emoji={emoji} />}
+                                                        </li>
+                                                        {
+                                                                emoji.attributes.variants.map((variant, index) => {
+                                                                        return ifEmoji(variant.character) 
+                                                                        ? 
+                                                                        <li 
+                                                                                className='variant' 
+                                                                                key={ index } 
+                                                                                onMouseOut={handleHideVariantsList}>
+                                                                                <Emoji emoji={variant} />
+                                                                        </li> 
+                                                                        : 
+                                                                        null
+                                                                })
+                                                        }
+                                                </ul>
+                                        }
                                 </li>
                         )
                 } else {
-                        return ifEmoji(emoji.attributes.character) ? <li key={index}>{emoji.attributes.character}</li> : null
+                        return ifEmoji(emoji.attributes.character) 
+                        ? 
+                        <li 
+                                key={index}
+                                data-emoji-id={emoji.id}
+                        >
+                                <Emoji emoji={emoji} />
+                        </li> 
+                        : 
+                        null
                 }
         })
-        
+        // <div className="save_emoji">
+        //         <span role='img' aria-label="plus">➕</span>
+        // </div>
         return (
                 <>      
                         {/* <p>{renderEmojis.length} results</p> */}
-                        {
-                                state.loading && (
-                                        <p>LOADING....</p>
-                                )
-                        }
                         <ul className="emojis_container">
+                        {/* {
+                                state.loading && (
+                                        <li style={{position: 'relative', left: '7.2em', top: '4.5em'}}>
+                                                <img src="images/mini-logo-black.png" alt="mini logo as loader" className="animate__animated animate__bounce animate__infinite" />
+                                        </li>
+                                )
+                        } */}
                                 { renderEmojis }
                         </ul>
                 </>
