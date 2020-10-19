@@ -3,7 +3,7 @@ import React from 'react'
 const Emoji = ({ emoji }) => {
         return (
                 <>
-                        { !!emoji.attributes ? emoji.attributes.character : emoji.character }
+                        { emoji.attributes ? emoji.attributes.character : emoji.character }
                 </>
         )
 }
