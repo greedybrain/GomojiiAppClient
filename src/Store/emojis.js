@@ -21,6 +21,11 @@ export default function emojisReducer(state = initialState, action) {
                                 results: action.payload.emojis,
                                 loading: false
                         }
+                case SEARCH_EMOJIS:
+                        return {
+                                ...state,
+                                results: action.payload.results
+                        }
                 case FILTER_EMOJIS:
                         return {
                                 ...state,
@@ -41,6 +46,7 @@ export default function emojisReducer(state = initialState, action) {
 const LOAD_EMOJIS = "LOAD_EMOJIS"
 const REQUESTING_EMOJIS = "REQUESTING_EMOJIS"
 const FILTER_EMOJIS = "FILTER_EMOJIS"
+const SEARCH_EMOJIS = 'SEARCH_EMOJIS'
 const SHOW_OTHER = 'SHOW_OTHER'
 
 //! CREATORS
@@ -65,6 +71,18 @@ export const filterEmojis = (emojis, categories) => {
                 }
         }
 }
+
+export const searchEmojis = (emojis, query) => ({
+        type: SEARCH_EMOJIS,
+        payload: {
+                results: emojis.filter(emoji => {
+                        return (emoji.attributes.slug.includes(query.toLowerCase()) ||
+                        emoji.attributes.slug === query.toLowerCase() ||
+                        emoji.attributes.unicodeName.includes(query.toLowerCase()) ||
+                        emoji.attributes.unicodeName === query.toLowerCase())
+                })
+        }
+})
 
 export const showOther = results => {
         return {
