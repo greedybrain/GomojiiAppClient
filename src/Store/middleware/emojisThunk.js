@@ -16,7 +16,7 @@ export const loadEmojisThunk = () => {
                         try {
                                 dispatch(requestingEmojis())
                                 const response = await axios(`${baseUrl}/${emojis}`)
-                                const fetchedEmojis = response.data.emojis.data.slice(0, 200)
+                                const fetchedEmojis = response.data.emojis
                                 dispatch(loadEmojis(fetchedEmojis))
                                 // localStorage.setItem('emojis', JSON.stringify(fetchedEmojis))
                         } catch(e) {

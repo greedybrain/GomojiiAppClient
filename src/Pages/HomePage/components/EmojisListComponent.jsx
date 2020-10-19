@@ -6,7 +6,6 @@ import ifEmoji from 'if-emoji'
 //! CUSTOM
 import '../../../Assets/emojisContainer.css'
 import Emoji from './Emoji'
-import { useMediaQuery } from 'react-responsive'
 
 const EmojisListComponent = () => {
         const state = useSelector(state => ({
@@ -15,7 +14,6 @@ const EmojisListComponent = () => {
                 results: state.emojisRed.results
         }))
         const history = useHistory()
-        const IS_AT_LEAST_799 = useMediaQuery({ maxWidth: 799 })
 
         const renderAccEmojis = () => {
                 if (history.location.pathname === '/') {
@@ -43,10 +41,10 @@ const EmojisListComponent = () => {
         }
 
         const handleSaveEmoji = event => {
-                // event.target.classList.add(
-                //         'animate__bounce'
-                // )
-                event.target.classList.toggle('animate__animated', 'animate_bounce')
+                event.target.classList.add(
+                        'animate__animated',
+                        'animate__bounce'
+                )
         }
         
         const renderEmojis = renderAccEmojis().map((emoji, index) => {
@@ -121,12 +119,8 @@ const EmojisListComponent = () => {
                         null
                 }
         })
-        // <div className="save_emoji">
-        //         <span role='img' aria-label="plus">➕</span>
-        // </div>
         return (
                 <>      
-                        {/* <p>{renderEmojis.length} results</p> */}
                         <ul className="emojis_container">
                         {/* {
                                 state.loading && (
