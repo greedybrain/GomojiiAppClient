@@ -7,8 +7,6 @@ import { signupUserThunk } from '../../../Store/middleware/authThunk'
 import '../../../Assets/signup.css'
 import { Link } from 'react-router-dom'
 import GoHome from '../../../Global/components/GoHome'
-import { useMediaQuery } from 'react-responsive'
-import Logo from '../../../Global/components/Logo'
 
 const SignupComponent = ({ history, randomEmoji }) => {
         const [email, setEmail] = useState('')

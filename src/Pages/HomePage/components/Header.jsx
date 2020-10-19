@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink, useHistory } from 'react-router-dom'
-import { useMediaQuery } from 'react-responsive'
 import '../../../Assets/header.css'
 import Logout from '../../../Global/components/Logout'
 import SearchForm from './SearchForm'
