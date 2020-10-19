@@ -15,11 +15,14 @@ export const checkLoggedInStatusThunk = (history) => {
                         const { user, logged_in } = response.data
                         const isLoggedIn = logged_in ? logged_in  : false
                         const userData = isLoggedIn ? user.data : {}
-                        const userEmojis = userData ? userData.attributes.user_favorites : null
+                        debugger
+                        const userEmojis = userData.attributes.user_favorites ? userData.attributes.user_favorites : null
                         if (userData) {
                                 dispatch(checkUserLoggedInStatus(userData, isLoggedIn))
                                 dispatch(loadUsersEmojis(userEmojis))
                                 history.location.replace('/')
+                        } else {
+                                return null
                         }
                 } catch(e) {
                         console.log(e)

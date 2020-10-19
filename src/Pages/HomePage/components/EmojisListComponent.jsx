@@ -42,7 +42,6 @@ const EmojisListComponent = () => {
 
         const handleSaveEmoji = event => {
                 event.target.classList.add(
-                        'animate__animated',
                         'animate__bounce'
                 )
         }
