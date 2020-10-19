@@ -72,7 +72,7 @@ const LoginComponent = ({ history }) => {
                                 :
                                 (
                                         <form onSubmit={handleSubmit}>
-                                                <h1>L<span style={{ display: "inline-block" }} className="animate__animated animate__bounce animate__infinite">{randomEmoji}</span>gin</h1>
+                                                <h1>L<span style={{ display: 'inline-block' }} className="animate__animated animate__bounce animate__infinite">{randomEmoji}</span>gin</h1>
                                                 <div className="form_content">
                                                         { showErrorMessage() }
                                                         <div className="email field" ref={refEmail}>
