@@ -1,12 +1,11 @@
 //! BUILT IN OR PACKAGE
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useMediaQuery } from 'react-responsive'
 
 //! CUSTOM
 import Logo from '../../../Global/components/Logo'
 import '../../../Assets/sideNavContainer.css'
-import { filterEmojis, resetResults, showOther } from '../../../Store/emojis'
+import { filterEmojis, showOther } from '../../../Store/emojis'
 
 const SideNavContainer = () => {
         const dispatch = useDispatch()
@@ -14,11 +13,6 @@ const SideNavContainer = () => {
                 emojis: state.emojisRed.emojis,
                 loading: state.emojisRed.loading,
         }))
-        // const IS_1330_ABOVE = useMediaQuery({minWidth: 1330})
-        // const IS_BETWEEN_1200_1329 = useMediaQuery({ minWidth: 1200, maxWidth: 1329 })
-        // const IS_BETWEEN_1000_1199 = useMediaQuery({ minWidth: 1000, maxWidth: 1199 })
-        // const IS_BETWEEN_800_999 = useMediaQuery({ minWidth: 800, maxWidth: 999 })
-        const IS_AT_LEAST_1000 = useMediaQuery({ maxWidth: 1000 })
 
         const filterByOther = () => {
                 let other = state.emojis.filter(emoji => 
@@ -57,194 +51,194 @@ const SideNavContainer = () => {
                                 <li 
                                         className="smileys cat" 
                                         onClick={() => dispatch(filterEmojis(state.emojis, ['face']))} 
-                                        style={{ margin: '0 auto', padding: '0' }}
+                                
                                 >
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="smileys">
                                                         😇
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Smileys
                                         </div>
                                 </li>
-                                <li className="animals cat" onClick={() => dispatch(filterEmojis(state.emojis, ['animal']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="animals cat" onClick={() => dispatch(filterEmojis(state.emojis, ['animal']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="animals">
                                                         🦁
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Animals & Bugs
                                         </div>
                                 </li>
-                                <li className="body_parts cat" onClick={() => dispatch(filterEmojis(state.emojis, ['hand', 'hand-', 'body-parts']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="body_parts cat" onClick={() => dispatch(filterEmojis(state.emojis, ['hand', 'hand-', 'body-parts']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="body parts">
-                                                        🖕🏽
+                                                        ✌🏼
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Body Parts
                                         </div>
                                 </li>
-                                <li className="clothing_and_acc cat" onClick={() => dispatch(filterEmojis(state.emojis, ['clothing']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="clothing_and_acc cat" onClick={() => dispatch(filterEmojis(state.emojis, ['clothing']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="clothing and acc">
                                                         👗
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Clothing & Acc
                                         </div>
                                 </li>
-                                <li className="emoticons cat" onClick={() => dispatch(filterEmojis(state.emojis, ['emotion']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="emoticons cat" onClick={() => dispatch(filterEmojis(state.emojis, ['emotion']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="emoticons">
                                                         ❤️
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Emoticons
                                         </div>
                                 </li>
-                                <li className="family cat" onClick={() => dispatch(filterEmojis(state.emojis, ['family']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="family cat" onClick={() => dispatch(filterEmojis(state.emojis, ['family']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="family">
                                                         👫🏼
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Family
                                         </div>
                                 </li>
-                                <li className="flags cat" onClick={() => dispatch(filterEmojis(state.emojis, ['flag']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="flags cat" onClick={() => dispatch(filterEmojis(state.emojis, ['flag']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="flags">
                                                         🇺🇸
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Flags
                                         </div>
                                 </li>
-                                <li className="food_and_drink cat" onClick={() => dispatch(filterEmojis(state.emojis, ['food', 'drink']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="food_and_drink cat" onClick={() => dispatch(filterEmojis(state.emojis, ['food', 'drink']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="food and drink">
                                                         🍔
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Food & Drink
                                         </div>
                                 </li>
-                                <li className="gestures cat" onClick={() => dispatch(filterEmojis(state.emojis, ['gesture']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="gestures cat" onClick={() => dispatch(filterEmojis(state.emojis, ['gesture']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="gestures">
                                                         🤷🏾‍♂️
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Gestures
                                         </div>
                                 </li>
-                                <li className="music cat" onClick={() => dispatch(filterEmojis(state.emojis, ['music']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="music cat" onClick={() => dispatch(filterEmojis(state.emojis, ['music']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="music">
                                                         🎸
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null} >
+                                        <div className="cat_name" >
                                                 Music
                                         </div>
                                 </li>
-                                <li className="people_and_roles cat" onClick={() => dispatch(filterEmojis(state.emojis, ['person', 'role', '-holding']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="people_and_roles cat" onClick={() => dispatch(filterEmojis(state.emojis, ['person', 'role', '-holding']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="people and roles">
                                                         🧑🏽‍🍳
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 People
                                         </div>
                                 </li>
-                                <li className="plants cat" onClick={() => dispatch(filterEmojis(state.emojis, ['plant']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="plants cat" onClick={() => dispatch(filterEmojis(state.emojis, ['plant']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="plants">
                                                         🌵
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Nature
                                         </div>
                                 </li>
-                                <li className="sports cat" onClick={() => dispatch(filterEmojis(state.emojis, ['person-sport']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="sports cat" onClick={() => dispatch(filterEmojis(state.emojis, ['person-sport']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="sports">
                                                         ⛹️‍♀️
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Sports
                                         </div>
                                 </li>
-                                <li className="symbols cat" onClick={() => dispatch(filterEmojis(state.emojis, ['symbol']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="symbols cat" onClick={() => dispatch(filterEmojis(state.emojis, ['symbol']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="symbols">
                                                         🏧
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Symbols
                                         </div>
                                 </li>
-                                <li className="transport cat" onClick={() => dispatch(filterEmojis(state.emojis, ['transport']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="transport cat" onClick={() => dispatch(filterEmojis(state.emojis, ['transport']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="transport">
                                                         🏍️
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Transport
                                         </div>
                                 </li>
-                                <li className="travel_and_places cat" onClick={() => dispatch(filterEmojis(state.emojis, ['place']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="travel_and_places cat" onClick={() => dispatch(filterEmojis(state.emojis, ['place']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="travel and places">
                                                         🌎
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Travel & Places
                                         </div>
                                 </li>
-                                <li className="weather cat" onClick={() => dispatch(filterEmojis(state.emojis, ['sky-weather']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="weather cat" onClick={() => dispatch(filterEmojis(state.emojis, ['sky-weather']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="weather">
                                                         🌈
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Weather
                                         </div>
                                 </li>
-                                <li className="zodiacs cat" onClick={() => dispatch(filterEmojis(state.emojis, ['zodiac']))} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="zodiacs cat" onClick={() => dispatch(filterEmojis(state.emojis, ['zodiac']))}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="zodiac">
                                                         ♏
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Zodiac
                                         </div>
                                 </li>
-                                <li className="misc cat" onClick={filterByOther} style={{ margin: '0 auto', padding: '0' }}>
-                                        <div className="emojicon" style={IS_AT_LEAST_1000 ? { margin: '0 auto', paddingTop: '10px', fontSize: '1.7rem' } : null}>
+                                <li className="misc cat" onClick={filterByOther}>
+                                        <div className="emojicon">
                                                 <span role="img" aria-label="misc">
                                                         ➕
                                                 </span>
                                         </div>
-                                        <div className="cat_name" style={IS_AT_LEAST_1000 ? {display: 'none'} : null}>
+                                        <div className="cat_name">
                                                 Other
                                         </div>
                                 </li>
