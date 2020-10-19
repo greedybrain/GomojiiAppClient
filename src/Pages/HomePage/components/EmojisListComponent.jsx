@@ -6,6 +6,7 @@ import ifEmoji from 'if-emoji'
 //! CUSTOM
 import '../../../Assets/emojisContainer.css'
 import Emoji from './Emoji'
+import { useMediaQuery } from 'react-responsive'
 
 const EmojisListComponent = () => {
         const state = useSelector(state => ({
@@ -14,6 +15,7 @@ const EmojisListComponent = () => {
                 results: state.emojisRed.results
         }))
         const history = useHistory()
+        const IS_AT_LEAST_799 = useMediaQuery({ maxWidth: 799 })
 
         const renderAccEmojis = () => {
                 if (history.location.pathname === '/') {
@@ -39,6 +41,13 @@ const EmojisListComponent = () => {
                         return null
                 }
         }
+
+        const handleSaveEmoji = event => {
+                // event.target.classList.add(
+                //         'animate__bounce'
+                // )
+                event.target.classList.toggle('animate__animated', 'animate_bounce')
+        }
         
         const renderEmojis = renderAccEmojis().map((emoji, index) => {
                 if (emoji.attributes.variants.length > 0) {
@@ -47,6 +56,7 @@ const EmojisListComponent = () => {
                                         key={index} 
                                         style={{display: "flex"}} 
                                         className="emoji_wrapper"
+                                        onClick={handleSaveEmoji}
                                 >
                                         <div 
                                                 className="parent_emoji"
@@ -72,7 +82,9 @@ const EmojisListComponent = () => {
                                                         onMouseOut={handleHideVariantsList}>
                                                         <li 
                                                                 className='variant' 
-                                                                onMouseOut={handleHideVariantsList}>
+                                                                onMouseOut={handleHideVariantsList}
+                                                                onClick={handleSaveEmoji}
+                                                        >
                                                                 {<Emoji emoji={emoji} />}
                                                         </li>
                                                         {
@@ -82,7 +94,9 @@ const EmojisListComponent = () => {
                                                                         <li 
                                                                                 className='variant' 
                                                                                 key={ index } 
-                                                                                onMouseOut={handleHideVariantsList}>
+                                                                                onMouseOut={handleHideVariantsList}
+                                                                                onClick={handleSaveEmoji}
+                                                                        >
                                                                                 <Emoji emoji={variant} />
                                                                         </li> 
                                                                         : 
@@ -99,6 +113,7 @@ const EmojisListComponent = () => {
                         <li 
                                 key={index}
                                 data-emoji-id={emoji.id}
+                                onClick={handleSaveEmoji}
                         >
                                 <Emoji emoji={emoji} />
                         </li> 
