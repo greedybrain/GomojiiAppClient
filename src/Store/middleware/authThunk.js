@@ -1,12 +1,11 @@
 import axios from 'axios'
 import { _get } from '../../Utils/config'
 import { catchFailedErrors, checkUserLoggedInStatus, loadUsersEmojis, loginUser, logoutUser, saveEmoji, signupUser } from '../auth'
-import { loadEmojisThunk } from './emojisThunk'
 
 
 const { baseUrl, loginCheck, signup, login, logout, emojis, users } = _get.endpoints
 
-export const checkLoggedInStatusThunk = () => {
+export const checkLoggedInStatusThunk = (history) => {
         return  async (dispatch, getState) => {
                 try {
                         const response = await axios(
@@ -16,7 +15,12 @@ export const checkLoggedInStatusThunk = () => {
                         const { user, logged_in } = response.data
                         const isLoggedIn = logged_in ? logged_in  : false
                         const userData = isLoggedIn ? user.data : {}
-                        dispatch(checkUserLoggedInStatus(userData, isLoggedIn))
+                        const userEmojis = userData ? userData.attributes.user_favorites : null
+                        if (userData) {
+                                dispatch(checkUserLoggedInStatus(userData, isLoggedIn))
+                                dispatch(loadUsersEmojis(userEmojis))
+                                history.location.replace('/')
+                        }
                 } catch(e) {
                         console.log(e)
                 }
@@ -75,8 +79,9 @@ export const loginUserThunk = (email, password, history) => {
                                 history.replace('/login')
                         }
                         if (user) {
+                                const usersEmojis = user.data.attributes.user_favorites
                                 dispatch(loginUser(user))
-                                dispatch(loadUsersEmojis())
+                                dispatch(loadUsersEmojis(usersEmojis))
                                 history.replace('/')
                         } 
                 } catch(e) {
@@ -115,7 +120,7 @@ export const logoutUserThunk = history => {
                                 { withCredentials: true }
                         )
                         dispatch(logoutUser())
-                        history.push('/login')
+                        history.push('/')
                 } catch(e) {
                         console.log(e)
                 }
