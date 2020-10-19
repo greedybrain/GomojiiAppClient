@@ -1,14 +1,12 @@
 //! REACT  && REDUXSTUFF
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { Redirect, Route, Switch } from 'react-router-dom'
 //! MY COMPONENTS
 import HomeContainer from '../Pages/HomePage/containers/HomeContainer'
 import LoginComponent from '../Pages/LoginPage/components/LoginComponent'
 import SignupComponent from '../Pages/SignupPage/components/SignupComponent'
 import NotFoundContainer from '../Global/containers/NotFoundContainer'
-import { checkLoggedInStatusThunk } from '../Store/middleware/authThunk'
-import { loadEmojisThunk } from '../Store/middleware/emojisThunk'
 
 const Routes = ({ randomEmoji }) => {     
         const user = useSelector(state => ({
