@@ -30,7 +30,7 @@ div.side_nav_container {
                         cursor: pointer;
 
                         div.cat_name {
-                                margin-left: 10px;
+                                margin-left: 5px;
                         }
 
                         div.emojicon {
@@ -56,5 +56,28 @@ div.side_nav_container {
         }
         to {
                 transform: rotate(-20deg);
+        }
+}
+
+// MEDIA QUERIES FOR SIDENAV 
+@media only screen and (max-width: 1150px) {
+        div.side_nav_container {
+        
+                ul {
+                        li.cat {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding-left: 10px;
+        
+                                div.cat_name {
+                                        display: none;
+                                }
+        
+                                div.emojicon {
+                                        font-size: 2rem;
+                                }
+                        }
+                }
         }
 }

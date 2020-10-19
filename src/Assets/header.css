@@ -1,7 +1,6 @@
 header {
   position: relative;
   width: 100%;
-  height: 12vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,12 +10,11 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 30px;
+  padding: 20px 30px;
 }
 
 header form {
   width: 35vw;
-  min-width: 200px;
 }
 
 header form div.search_bar_area {
@@ -91,11 +89,11 @@ header ul li:not(:first-child) {
   margin-left: 30px;
 }
 
-header ul li.results, header ul li.home, header ul li.favs, header ul li.logout_btn, header ul li.help {
+header ul li.results, header ul li.home, header ul li.favs, header ul li.login, header ul li.signup, header ul li.logout_btn, header ul li.help {
   font-size: 1.5rem;
 }
 
-header ul li.results::after, header ul li.home::after, header ul li.favs::after, header ul li.logout_btn::after, header ul li.help::after {
+header ul li.results::after, header ul li.results a, header ul li.home::after, header ul li.home a, header ul li.favs::after, header ul li.favs a, header ul li.login::after, header ul li.login a, header ul li.signup::after, header ul li.signup a, header ul li.logout_btn::after, header ul li.logout_btn a, header ul li.help::after, header ul li.help a {
   font-size: 1.2rem;
   margin-left: 5px;
   position: relative;
@@ -103,17 +101,19 @@ header ul li.results::after, header ul li.home::after, header ul li.favs::after,
 }
 
 header ul li.results {
-  border-right: 1px solid #a7a7a773;
-  padding: 0 45px 0 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: #5c5c5c;
+  margin-right: 40px;
 }
 
 header ul li.home::after {
   content: "Home";
 }
 
-header ul li.favs::after {
-  content: "Favorites";
+header ul li.favs span.saves_count {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding-left: 5px;
 }
 
 header ul li.logout_btn::after {
@@ -129,26 +129,27 @@ header ul li.help::after {
   content: '?';
 }
 
+header ul li.login a, header ul li.signup a {
+  color: #000;
+}
+
 header ul li.menu_btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 30px;
   width: 25px;
 }
 
 header ul li.menu_btn div {
   width: 100%;
-  height: 3px;
   margin: 2px 0;
-  border: 2px solid #1b1b1b;
+  border: 1px solid #1b1b1b;
   border-radius: 10px;
 }
 
@@ -156,4 +157,63 @@ header ul li.menu_btn div.line_2 {
   width: 75%;
   -ms-flex-item-align: end;
       align-self: flex-end;
+}
+
+@media only screen and (max-width: 1150px) {
+  header form {
+    width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  ul li.results {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  header {
+    padding: 15px 5px;
+  }
+  header form {
+    min-width: 225px;
+  }
+  header form div.search_bar_area {
+    height: 40px;
+  }
+  header form div.search_bar_area div.search_bar input {
+    font-size: 1rem;
+  }
+  header form div.search_bar_area div.submit_btn button {
+    font-size: 1rem;
+  }
+  header ul li.results, header ul li.home, header ul li.favs, header ul li.login, header ul li.signup, header ul li.logout_btn, header ul li.help {
+    display: none;
+  }
+  header ul li.menu_btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 30px;
+    width: 25px;
+  }
+  header ul li.menu_btn div {
+    border: 1px solid red;
+    width: 100%;
+    margin: 2px 0;
+    border: 1px solid #1b1b1b;
+    border-radius: 10px;
+  }
+  header ul li.menu_btn div.line_2 {
+    width: 75%;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
 }

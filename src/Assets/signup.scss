@@ -58,6 +58,7 @@ div.signup_page {
 
                 div.form_content {
                         width: 65%;
+                        max-width: 400px;
                         margin-bottom: 50px;
                         div.field {
                                 border: 1px solid #33333356;
@@ -123,5 +124,89 @@ div.signup_page {
                         bottom: 10px;
                 }
 
+        }
+}
+
+// MEDIA QUERIES FOR SIGNUP PAGE  
+@media only screen and (max-width: 950px) {
+        div.signup_page {
+                div.wallpaper {
+                        width: 50vw;
+                }
+                div.wallpaper_overlay {
+                        width: 50vw;
+                        height: 100%;
+                }
+                form {
+                        width: 50vw;
+        
+                        h1 {
+                                font-size: 2.5rem;
+                        }
+        
+                        div.form_content {
+                                div.field {
+                                        height: 50px;
+                                        
+                                        input {
+                                                font-size: 1.2rem;
+                                        }
+                                }
+        
+                                div.submit_btn {
+                                        height: 50px;
+        
+                                        button {
+                                                font-size: 1.2rem;
+                                        }
+                                }
+                        }
+        
+                        div.form_footer {
+                                font-size: 1.2rem;
+                        }
+        
+                }
+        }
+}
+
+@media only screen and (max-width: 772px) { 
+        div.signup_page {
+                div.wallpaper {
+                        display: none
+                }
+                div.wallpaper_overlay {
+                        display: none;
+                }
+                form {
+                        width: 100vw;
+        
+                        h1 {
+                                font-size: 2.5rem;
+                        }
+        
+                        div.form_content {
+                                div.field {
+                                        height: 50px;
+                                        
+                                        input {
+                                                font-size: 1.2rem;
+                                        }
+                                }
+        
+                                div.submit_btn {
+                                        height: 50px;
+        
+                                        button {
+                                                font-size: 1.2rem;
+                                        }
+                                }
+                        }
+        
+                        div.form_footer {
+                                font-size: 1.2rem;
+                        }
+        
+                }
         }
 }

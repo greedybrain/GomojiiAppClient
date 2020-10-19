@@ -78,6 +78,7 @@ div.login_page form h1 {
 
 div.login_page form div.form_content {
   width: 65%;
+  max-width: 400px;
   margin-bottom: 50px;
 }
 
@@ -145,4 +146,65 @@ div.login_page form div.form_footer {
   color: rgba(51, 51, 51, 0.781);
   position: absolute;
   bottom: 10px;
+}
+
+@media only screen and (max-width: 950px) {
+  div.login_page div.wallpaper {
+    width: 50vw;
+  }
+  div.login_page div.wallpaper_overlay {
+    width: 50vw;
+    height: 100%;
+  }
+  div.login_page form {
+    width: 50vw;
+  }
+  div.login_page form h1 {
+    font-size: 2.5rem;
+  }
+  div.login_page form div.form_content div.field {
+    height: 50px;
+  }
+  div.login_page form div.form_content div.field input {
+    font-size: 1.2rem;
+  }
+  div.login_page form div.form_content div.submit_btn {
+    height: 50px;
+  }
+  div.login_page form div.form_content div.submit_btn button {
+    font-size: 1.2rem;
+  }
+  div.login_page form div.form_footer {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 772px) {
+  div.login_page div.wallpaper {
+    display: none;
+  }
+  div.login_page div.wallpaper_overlay {
+    display: none;
+  }
+  div.login_page form {
+    width: 100vw;
+  }
+  div.login_page form h1 {
+    font-size: 2.5rem;
+  }
+  div.login_page form div.form_content div.field {
+    height: 50px;
+  }
+  div.login_page form div.form_content div.field input {
+    font-size: 1.2rem;
+  }
+  div.login_page form div.form_content div.submit_btn {
+    height: 50px;
+  }
+  div.login_page form div.form_content div.submit_btn button {
+    font-size: 1.2rem;
+  }
+  div.login_page form div.form_footer {
+    font-size: 1.2rem;
+  }
 }

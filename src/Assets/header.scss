@@ -1,16 +1,14 @@
 header {
         position: relative;
-        // top: 1px;
         width: 100%;
-        height: 12vh;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 30px;
+        padding: 20px 30px;
         
         form {
                 width: 35vw;
-                min-width: 200px;
+                // min-width: 215px;
                 div.search_bar_area {
                         display: flex;
                         justify-content: space-between;
@@ -68,10 +66,12 @@ header {
                         &.results,
                         &.home,
                         &.favs,
+                        &.login,
+                        &.signup,
                         &.logout_btn ,
                         &.help{
                                 font-size: 1.5rem;
-                                &::after {
+                                &::after, a {
                                         font-size: 1.2rem;
                                         margin-left: 5px;
                                         position: relative;
@@ -80,9 +80,9 @@ header {
                         }
 
                         &.results {
-                                border-right: 1px solid #a7a7a773;
-                                padding: 0 45px 0 10px;
-                                font-size: 1.2rem;
+                                font-size: 1rem;
+                                color: #5c5c5c;
+                                margin-right: 40px;
                         }
 
                         &.home {
@@ -92,8 +92,13 @@ header {
                         }
 
                         &.favs {
+                                span.saves_count {
+                                        display: inline-block;
+                                        font-size: 1.2rem;
+                                        padding-left: 5px;
+                                }
                                 &::after {
-                                        content: "Favorites";
+                                        // content: "Favorites";
                                 }
                         }
                         &.logout_btn {
@@ -108,19 +113,29 @@ header {
                                         content: '?';
                                 }
                         }
+
+                        &.login, 
+                        &.signup {
+                                // border: 1px solid #b6b6b6;
+                                // padding: 5px 10px;
+                                // border-radius: 5px;
+                                // background-color: #c0c0c0;
+                                a {
+                                        color: #000;
+                                }
+                        }
                 }
 
                 li.menu_btn {
-                        display: flex;
+                        display: none;
                         flex-direction: column;
-                        align-items: center;
+                        justify-content: center;
                         height: 30px;
                         width: 25px;
                         div {
                                 width: 100%;
-                                height: 3px;
                                 margin: 2px 0;
-                                border: 2px solid #1b1b1b;;
+                                border: 1px solid #1b1b1b;;
                                 border-radius: 10px;
 
                                 &.line_1 {
@@ -132,6 +147,87 @@ header {
                                 }
                                 &.line_3 {
                                         
+                                }
+                        }
+                }
+        }
+}
+
+// MEDIA QUERIES FOR HEADER 
+@media only screen and (max-width: 1150px) {
+        header {
+                form {
+                        width: 30vw;
+                }
+        }
+}
+
+@media only screen and (max-width: 950px) {
+        ul {
+                li {
+                        &.results {
+                                display: none;
+                        }
+                }
+        }
+}
+
+@media only screen and (max-width: 840px) {
+        header {
+                padding: 15px 5px;
+                form {
+                        min-width: 225px;
+
+                        div.search_bar_area {
+                                height: 40px;
+        
+                                div.search_bar {
+                                        input {
+                                                font-size: 1rem;
+                                        }
+                                }
+                                div.submit_btn {
+                                        button {
+                                                font-size: 1rem;
+                                        }
+                                }
+                        }
+                }
+                ul {
+                        li {
+                                &.results,
+                                &.home,
+                                &.favs,
+                                &.login,
+                                &.signup,
+                                &.logout_btn ,
+                                &.help{
+                                        display: none;
+                                }
+                        }
+                        li.menu_btn {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                height: 30px;
+                                width: 25px;
+                                div {
+                                        border: 1px solid red;
+                                        width: 100%;
+                                        margin: 2px 0;
+                                        border: 1px solid #1b1b1b;
+                                        border-radius: 10px;
+        
+                                        &.line_1 {
+        
+                                        }
+                                        &.line_2 {
+                                                width: 75%;
+                                                align-self: flex-end;
+                                        }
+                                        &.line_3 {
+                                                
+                                        }
                                 }
                         }
                 }
