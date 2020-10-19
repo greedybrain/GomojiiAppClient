@@ -37,7 +37,7 @@ export default function authReducer(state = initialState, action) {
                 case LOAD_USERS_EMOJIS:
                         return {
                                 ...state,
-                                userEmojis: [action.payload.userEmojis]
+                                userEmojis: action.payload.userEmojis
                         }
                 case SAVE_EMOJI:
                         return {
