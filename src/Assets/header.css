@@ -168,6 +168,9 @@ header ul li.menu_btn div.line_2 {
 }
 
 @media only screen and (max-width: 950px) {
+  ul li.menu_btn {
+    -webkit-tap-highlight-color: transparent;
+  }
   ul li {
     -webkit-tap-highlight-color: transparent;
   }

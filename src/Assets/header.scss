@@ -132,22 +132,16 @@ header {
                         justify-content: center;
                         height: 30px;
                         width: 25px;
+                        
                         div {
                                 width: 100%;
                                 margin: 2px 0;
                                 border: 1px solid #1b1b1b;;
                                 border-radius: 10px;
-
-                                // &.line_1 {
-
-                                // }
                                 &.line_2 {
                                         width: 75%;
                                         align-self: flex-end;
                                 }
-                                // &.line_3 {
-                                        
-                                // }
                         }
                 }
         }
@@ -164,6 +158,9 @@ header {
 
 @media only screen and (max-width: 950px) {
         ul {
+                li.menu_btn {
+                        -webkit-tap-highlight-color: transparent;
+                }
                 li {
                         -webkit-tap-highlight-color: transparent;
                         &.results {
