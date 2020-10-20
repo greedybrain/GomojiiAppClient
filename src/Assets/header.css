@@ -173,7 +173,7 @@ header ul li.menu_btn div.line_2 {
 
 @media only screen and (max-width: 840px) {
   header {
-    padding: 15px 5px;
+    padding: 15px 20px;
   }
   header form {
     min-width: 225px;
@@ -202,18 +202,27 @@ header ul li.menu_btn div.line_2 {
         -ms-flex-pack: center;
             justify-content: center;
     height: 30px;
-    width: 25px;
+    width: 30px;
   }
   header ul li.menu_btn div {
-    border: 1px solid red;
     width: 100%;
     margin: 2px 0;
     border: 1px solid #1b1b1b;
-    border-radius: 10px;
+    border-radius: 30px;
+  }
+  header ul li.menu_btn div.line_1 {
+    height: 5px;
+    background-color: #1b1b1b;
   }
   header ul li.menu_btn div.line_2 {
     width: 75%;
+    height: 5px;
     -ms-flex-item-align: end;
         align-self: flex-end;
+    background-color: #1b1b1b;
+  }
+  header ul li.menu_btn div.line_3 {
+    height: 5px;
+    background-color: #1b1b1b;
   }
 }

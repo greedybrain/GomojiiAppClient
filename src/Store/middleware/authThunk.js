@@ -15,6 +15,7 @@ export const checkLoggedInStatusThunk = (history) => {
                         const { user, logged_in } = response.data
                         const isLoggedIn = logged_in ? logged_in  : false
                         const userData = isLoggedIn ? user.data : {}
+                        debugger
                         const userEmojis = userData.attributes.user_favorites ? userData.attributes.user_favorites : null
                         if (userData) {
                                 dispatch(checkUserLoggedInStatus(userData, isLoggedIn))
