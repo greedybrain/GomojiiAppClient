@@ -8,6 +8,7 @@ header {
         justify-content: space-between;
         padding: 20px 30px;
         
+        
         form {
                 width: 35vw;
                 // min-width: 215px;
@@ -35,7 +36,7 @@ header {
                                 }
                         }
                         div.submit_btn {
-                                width: 10%;
+                                width: 15%;
                                 display: flex;
                                 border-radius: 0 29px 29px 0;
                                 button {
@@ -44,10 +45,10 @@ header {
                                         outline: none;
                                         background-color: #fff;
                                         font-size: 1.2rem;
-                                        padding-right: 10px;
+                                        padding-right: 20px;
                                         border-radius: 0 29px 29px 0;
                                         position: relative;
-                                        right: 10px;
+                                        // right: 10px;
                                 }
                         }
                 }
@@ -174,6 +175,7 @@ header {
 @media only screen and (max-width: 840px) {
         header {
                 padding: 15px 20px;
+                background-color: #ffffff57;
                 form {
                         min-width: 225px;
 

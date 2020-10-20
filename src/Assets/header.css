@@ -50,7 +50,7 @@ header form div.search_bar_area div.search_bar input {
 }
 
 header form div.search_bar_area div.submit_btn {
-  width: 10%;
+  width: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,10 +63,9 @@ header form div.search_bar_area div.submit_btn button {
   outline: none;
   background-color: #fff;
   font-size: 1.2rem;
-  padding-right: 10px;
+  padding-right: 20px;
   border-radius: 0 29px 29px 0;
   position: relative;
-  right: 10px;
 }
 
 header ul {
@@ -177,6 +176,7 @@ header ul li.menu_btn div.line_2 {
 @media only screen and (max-width: 840px) {
   header {
     padding: 15px 20px;
+    background-color: #ffffff57;
   }
   header form {
     min-width: 225px;

@@ -141,3 +141,9 @@ ul.emojis_container li div.save_emoji i {
     display: inline-block;
   }
 }
+
+@media only screen and (max-width: 840px) {
+  ul.emojis_container {
+    position: relative;
+  }
+}

@@ -1,5 +1,6 @@
 ul.emojis_container {
         position: fixed;
+        // top: 50px;
         z-index: 102;
         border-right: 1px solid #d1d1d17a;
         width: 65vw;
@@ -127,5 +128,11 @@ ul.emojis_container {
                                 }
                         }
                 }
+        }
+}
+
+@media only screen and (max-width: 840px) {
+        ul.emojis_container {
+                position: relative;
         }
 }
