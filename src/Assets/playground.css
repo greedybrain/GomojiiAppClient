@@ -25,6 +25,8 @@ div.playground_container div.emojis_and_ads {
 
 div.playground_container div.emojis_and_ads div.ads {
   width: 20vw;
+  position: absolute;
+  right: 0;
 }
 
 @media only screen and (max-width: 950px) {
