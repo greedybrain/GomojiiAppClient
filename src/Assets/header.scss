@@ -99,9 +99,6 @@ header {
                                         font-size: 1.2rem;
                                         padding-left: 5px;
                                 }
-                                &::after {
-                                        // content: "Favorites";
-                                }
                         }
                         &.logout_btn {
                                 &::after {
@@ -140,16 +137,16 @@ header {
                                 border: 1px solid #1b1b1b;;
                                 border-radius: 10px;
 
-                                &.line_1 {
+                                // &.line_1 {
 
-                                }
+                                // }
                                 &.line_2 {
                                         width: 75%;
                                         align-self: flex-end;
                                 }
-                                &.line_3 {
+                                // &.line_3 {
                                         
-                                }
+                                // }
                         }
                 }
         }
