@@ -75,58 +75,7 @@ ul.emojis_container {
                 width: 85vw;
 
                 li {
-                        font-size: 4rem;
-                        position: relative;
-                        cursor: pointer;
-        
-                        div.parent_emoji {
-                                display: flex;
-                                div.caret {
-                                        margin-left: 3px;
-                                        i {
-                                                font-size: 1.6rem;
-                                                cursor: pointer;
-                                        }
-                                }
-                        }
-        
-                        // img.loading_image {
-                        //         // animation: imageAnimation 1s forwards infinite;
-                        // }
-        
-                        ul.variants_container {
-                                display: flex;
-                                position: absolute;
-                                z-index: 200;
-                                border: 1px solid #d1d1d17a;
-                                background-color: #8f8f8f;
-                                border-radius: 5px;
-                                padding: 0 5px;
-                                overflow-y: scroll;
-                                height: 31vh;
-                        }
-        
-                        div.save_emoji {
-                                display: flex;
-                                position: absolute;
-                                align-items: center;
-                                justify-content: center;
-                                z-index: 101;
-                                font-size: 1rem;
-                                top: 35px;
-                                left: -20px;
-                                color: #fff;
-                                background-color: #00cc11;
-                                border-radius: 100px;
-                                width: 24px;
-                                height: 23px;
-                                text-align: center;
-                                cursor: pointer;
-                                i {
-                                        display: inline-block;
-                
-                                }
-                        }
+                        -webkit-tap-highlight-color: transparent;
                 }
         }
 }
