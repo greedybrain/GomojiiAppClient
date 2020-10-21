@@ -14,10 +14,23 @@ div.playground_container {
                 display: flex;
                 width: 85vw;
                 height: 100%;
+                overflow-y: scroll;
                 div.ads {
                         width: 20vw;
                         position: absolute;
                         right: 0;
+                        padding: 10px 20px;
+
+                        ul.footer_ads_section {
+                                li {
+                                        img {
+                                                width: 100%;
+                                        }
+                                }
+                                li.copyright_footer {
+                                        color: #a3a3a3;
+                                }
+                        }
                 }
         }
 }

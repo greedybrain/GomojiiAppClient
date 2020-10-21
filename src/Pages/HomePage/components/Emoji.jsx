@@ -5,7 +5,7 @@ const Emoji = ({ emoji }) => {
         const handleCopyEmoji = ()  => alert('Emoji saved and copied')
         return (
                 <CopyToClipboard text={ emoji.attributes ? emoji.attributes.character : emoji.character }>
-                        <span onClick={handleCopyEmoji} data-id={emoji.id} style={{ display: "inline-block" }}>
+                        <span onDoubleClick={handleCopyEmoji} data-id={emoji.id} style={{ display: "inline-block" }}>
                                 { emoji.attributes ? emoji.attributes.character : emoji.character }
                         </span>
                 </CopyToClipboard>

@@ -11,9 +11,17 @@ const Playground = () => {
                         <div className="emojis_and_ads">
                                 {<EmojisListComponent />}
                                 <div className="ads">
-                                        <div className="footer_ads_section">
-                                                <span aria-label="copyright emoji" role="img">©️</span> 2020 Gomojii
-                                        </div>
+                                        <ul className="footer_ads_section">
+                                                <li className="ad_1">
+                                                        <img src="/images/sample-ad-1.jpg" alt="ad 1"/>
+                                                </li>
+                                                <li className="ad_2">
+                                                        <img src="/images/sample-ad-2.png" alt="ad 2"/>
+                                                </li>
+                                                <li className="copyright_footer">
+                                                        <span aria-label="copyright emoji" role="img">©️</span> 2020 Gomojii
+                                                </li>
+                                        </ul>
                                 </div>
                         </div>
                 </div>  

@@ -58,7 +58,7 @@ const EmojisListComponent = () => {
                                         key={index} 
                                         style={{display: "flex"}} 
                                         className="emoji_wrapper"
-                                        onClick={handleSaveEmoji}
+                                        onDoubleClick={handleSaveEmoji}
                                 >
                                         <div 
                                                 className="parent_emoji"
