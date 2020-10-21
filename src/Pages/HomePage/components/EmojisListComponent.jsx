@@ -85,7 +85,7 @@ const EmojisListComponent = () => {
                                                         <li 
                                                                 className='variant' 
                                                                 onMouseOut={handleHideVariantsList}
-                                                                onClick={handleSaveEmoji}
+                                                                onDoubleClick={handleSaveEmoji}
                                                         >
                                                                 {<Emoji emoji={emoji} />}
                                                         </li>
@@ -97,7 +97,7 @@ const EmojisListComponent = () => {
                                                                                 className='variant' 
                                                                                 key={ index } 
                                                                                 onMouseOut={handleHideVariantsList}
-                                                                                onClick={handleSaveEmoji}
+                                                                                onDoubleClick={handleSaveEmoji}
                                                                         >
                                                                                 <Emoji emoji={variant} />
                                                                         </li> 
@@ -115,7 +115,7 @@ const EmojisListComponent = () => {
                         <li 
                                 key={index}
                                 data-emoji-id={emoji.id}
-                                onClick={handleSaveEmoji}
+                                onDoubleClick={handleSaveEmoji}
                         >
                                 <Emoji emoji={emoji} />
                         </li> 
@@ -129,7 +129,7 @@ const EmojisListComponent = () => {
                         {
                                 state.loading && (
                                         <li style={{position: 'relative', left: '7.2em', top: '4.5em'}}>
-                                                <img src={require("/images/mini-logo-black.png")}alt="mini logo as loader" className="animate__animated animate__bounce animate__infinite" />
+                                                <img src='images/mini-logo-black.png' alt="mini logo as loader" className="animate__animated animate__bounce animate__infinite" />
                                         </li>
                                 )
                         }
