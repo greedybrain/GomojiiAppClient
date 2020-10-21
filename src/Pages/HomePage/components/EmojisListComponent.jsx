@@ -1,13 +1,15 @@
 //! BUILT IN OR LIBRARY PACKAGE
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import ifEmoji from 'if-emoji'
 //! CUSTOM
 import '../../../Assets/emojisContainer.css'
 import Emoji from './Emoji'
+import { saveEmojiThunk } from '../../../Store/middleware/authThunk'
 
 const EmojisListComponent = () => {
+        const dispatch = useDispatch()
         const state = useSelector(state => ({
                 emojis: state.emojisRed.emojis,
                 loading: state.emojisRed.loading,
@@ -41,10 +43,13 @@ const EmojisListComponent = () => {
         }
 
         const handleSaveEmoji = event => {
-                event.target.classList.add(
-                        'animate__bounce'
-                )
-        }
+                const emojiId = event.target.dataset.id
+                if (emojiId) {
+                        dispatch(saveEmojiThunk(emojiId))
+                } else {
+                        return;
+                }
+        }       
         
         const renderEmojis = renderAccEmojis().map((emoji, index) => {
                 if (emoji.attributes.variants.length > 0) {

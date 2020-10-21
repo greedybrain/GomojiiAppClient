@@ -15,12 +15,12 @@ export const checkLoggedInStatusThunk = (history) => {
                         const { user, logged_in } = response.data
                         const isLoggedIn = logged_in ? logged_in  : false
                         const userData = isLoggedIn ? user.data : {}
-                        debugger
-                        const userEmojis = userData.attributes.user_favorites ? userData.attributes.user_favorites : null
-                        if (userData) {
+                        const userEmojiFavorites = userData.attributes.user_favorites
+                        const userEmojis = userEmojiFavorites ? userEmojiFavorites : null
+                        if (userData !== {}) {
                                 dispatch(checkUserLoggedInStatus(userData, isLoggedIn))
                                 dispatch(loadUsersEmojis(userEmojis))
-                                history.location.replace('/')
+                                history.replace('/')
                         } else {
                                 return null
                         }
@@ -104,7 +104,6 @@ export const saveEmojiThunk = emoji_id => {
                         )
                         const emoji = response.data.favorite.data.attributes
                         if (emoji) {
-                                // debugger
                                 dispatch(saveEmoji(emoji))
                         }
                         else return
