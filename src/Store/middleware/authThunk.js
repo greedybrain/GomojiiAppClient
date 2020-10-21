@@ -12,6 +12,7 @@ export const checkLoggedInStatusThunk = (history) => {
                                 `${baseUrl}/${loginCheck}`,
                                 { withCredentials: true }
                         )
+                        debugger
                         const { user, logged_in } = response.data
                         const isLoggedIn = logged_in ? logged_in  : false
                         const userData = isLoggedIn ? user.data : {}
