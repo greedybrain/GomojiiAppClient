@@ -13,10 +13,10 @@ const Playground = () => {
                                 <div className="ads">
                                         <ul className="footer_ads_section">
                                                 <li className="ad_1">
-                                                        <img src={require("images/sample-ad-1.jpg")} alt="ad 1"/>
+                                                        <img src="/images/sample-ad-1.jpg" alt="ad 1"/>
                                                 </li>
                                                 <li className="ad_2">
-                                                        <img src={require("images/sample-ad-2.png")} alt="ad 2"/>
+                                                        <img src="/images/sample-ad-2.png" alt="ad 2"/>
                                                 </li>
                                                 <li className="copyright_footer">
                                                         <span aria-label="copyright emoji" role="img">©️</span> 2020 Gomojii
