@@ -22,7 +22,7 @@ export const checkLoggedInStatusThunk = (history) => {
                                 dispatch(loadUsersEmojis(userEmojis))
                                 history.replace('/')
                         } else {
-                                return null
+                                return;
                         }
                 } catch(e) {
                         console.log(e)
