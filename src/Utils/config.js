@@ -11,4 +11,3 @@ export const _get = {
                 emojiApi: "https://emoji-api.com/emojis?access_key=24e47f404645206a64862b6f8cc6ec4ada2bc089",
         }
 }
-// /api/v1/users/:user_id/emojis
