@@ -129,7 +129,7 @@ const EmojisListComponent = () => {
                         {
                                 state.loading && (
                                         <li style={{position: 'relative', left: '7.2em', top: '4.5em'}}>
-                                                <img src="images/mini-logo-black.png" alt="mini logo as loader" className="animate__animated animate__bounce animate__infinite" />
+                                                <img src="/images/mini-logo-black.png" alt="mini logo as loader" className="animate__animated animate__bounce animate__infinite" />
                                         </li>
                                 )
                         }
