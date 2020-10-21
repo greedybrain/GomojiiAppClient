@@ -65,7 +65,7 @@ const EmojisListComponent = () => {
                                         >
                                                 <div 
                                                         className="emoji" 
-                                                        onMouseEnter={handleCaretClick}
+                                                        onClick={handleCaretClick}
                                                 >
                                                         <Emoji emoji={emoji} />
                                                 </div>
@@ -74,7 +74,7 @@ const EmojisListComponent = () => {
                                                 >
                                                         <i 
                                                                 className="fas fa-caret-right" 
-                                                                onMouseEnter={handleCaretClick}></i>
+                                                                onClick={handleCaretClick}></i>
                                                 </div>
                                         </div>
                                         {
