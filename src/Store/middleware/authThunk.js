@@ -102,7 +102,7 @@ export const saveEmojiThunk = emoji_id => {
                                 { withCredentials: true }
                         )
                         const emoji = response.data.favorite.data.attributes
-                        if (emoji) {
+                        if (emoji && user_id) {
                                 dispatch(saveEmoji(emoji))
                         }
                         else return

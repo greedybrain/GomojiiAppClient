@@ -1,0 +1,10 @@
+ul.menu_drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 200;
+  width: 85vw;
+  height: 100vh;
+  background-color: #313131e3;
+  border: 1px solid red;
+}

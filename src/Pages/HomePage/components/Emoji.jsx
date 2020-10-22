@@ -1,8 +1,10 @@
 import React from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { useSelector } from 'react-redux'
 
 const Emoji = ({ emoji }) => {
-        const handleCopyEmoji = ()  => alert('Emoji saved and copied')
+        const userData = useSelector(state => state.authRed.user)
+        const handleCopyEmoji = ()  => userData.user.id ? alert('Emoji saved and copied') : alert('Emoji copied (Login or Signup to save one')
         return (
                 <li>
                         <CopyToClipboard text={ emoji.attributes ? emoji.attributes.character : emoji.character }>

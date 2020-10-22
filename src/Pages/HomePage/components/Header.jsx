@@ -1,8 +1,10 @@
 import React from 'react'
+import { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink, useHistory } from 'react-router-dom'
 import '../../../Assets/header.css'
 import Logout from '../../../Global/components/Logout'
+import MenuDrawer from '../../../Global/components/MenuDrawer'
 import SearchForm from './SearchForm'
 
 const Header = () => {
@@ -12,11 +14,17 @@ const Header = () => {
                 userEmojis: state.authRed.userEmojis
         }))
         const history = useHistory()
+        const refMenuButton = useRef(null)
+
+        const handleMenuButtonClick = () => {
+                // refMenuButton
+        }
 
         return (
                 <header 
                         className='mode_change'
                 >
+                        <MenuDrawer />
                         <SearchForm />
                         <ul>
                                 <li className="results">
@@ -59,7 +67,7 @@ const Header = () => {
                                                 </li>
                                         </>
                                 }
-                                <li className="menu_btn">
+                                <li className="menu_btn" ref={refMenuButton}>
                                         <div className="line_1"></div>
                                         <div className="line_2"></div>
                                         <div className="line_3"></div>
