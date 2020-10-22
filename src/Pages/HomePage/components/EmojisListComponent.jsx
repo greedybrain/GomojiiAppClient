@@ -52,64 +52,64 @@ const EmojisListComponent = () => {
         }       
         
         const renderEmojis = renderAccEmojis().map((emoji, index) => {
-                // if (emoji.attributes.variants.length > 0) {
-                //         return (
-                //                 <li 
-                //                         key={index} 
-                //                         style={{display: "flex"}} 
-                //                         className="emoji_wrapper"
-                //                         onDoubleClick={handleSaveEmoji}
-                //                 >
-                //                         <div 
-                //                                 className="parent_emoji"
-                //                         >
-                //                                 <div 
-                //                                         className="emoji" 
-                //                                         onClick={handleCaretClick}
-                //                                 >
-                //                                         <Emoji emoji={emoji} />
-                //                                 </div>
-                //                                 <div 
-                //                                         className="caret"
-                //                                 >
-                //                                         <i 
-                //                                                 className="fas fa-caret-right" 
-                //                                                 onClick={handleCaretClick}></i>
-                //                                 </div>
-                //                         </div>
-                //                         {
-                //                                 <ul 
-                //                                         className="variants_container" 
-                //                                         style={{display: 'none'}} 
-                //                                         onMouseOut={handleHideVariantsList}>
-                //                                         <li 
-                //                                                 className='variant' 
-                //                                                 onMouseOut={handleHideVariantsList}
-                //                                                 onDoubleClick={handleSaveEmoji}
-                //                                         >
-                //                                                 <Emoji emoji={emoji} />
-                //                                         </li>
-                //                                         {
-                //                                                 emoji.attributes.variants.map((variant, index) => {
-                //                                                         return ifEmoji(variant.character) 
-                //                                                         ? 
-                //                                                         <li 
-                //                                                                 className='variant' 
-                //                                                                 key={ index } 
-                //                                                                 onMouseOut={handleHideVariantsList}
-                //                                                                 onDoubleClick={handleSaveEmoji}
-                //                                                         >
-                //                                                                 <Emoji emoji={variant} />
-                //                                                         </li> 
-                //                                                         : 
-                //                                                         null
-                //                                                 })
-                //                                         }
-                //                                 </ul>
-                //                         }
-                //                 </li>
-                //         )
-                // } else {
+                if (emoji.attributes.variants.length > 0) {
+                        return (
+                                <li 
+                                        key={index} 
+                                        style={{display: "flex"}} 
+                                        className="emoji_wrapper"
+                                        onDoubleClick={handleSaveEmoji}
+                                >
+                                        <div 
+                                                className="parent_emoji"
+                                        >
+                                                <div 
+                                                        className="emoji" 
+                                                        onClick={handleCaretClick}
+                                                >
+                                                        <Emoji emoji={emoji} />
+                                                </div>
+                                                <div 
+                                                        className="caret"
+                                                >
+                                                        <i 
+                                                                className="fas fa-caret-right" 
+                                                                onClick={handleCaretClick}></i>
+                                                </div>
+                                        </div>
+                                        {
+                                                <ul 
+                                                        className="variants_container" 
+                                                        style={{display: 'none'}} 
+                                                        onMouseOut={handleHideVariantsList}>
+                                                        <li 
+                                                                className='variant' 
+                                                                onMouseOut={handleHideVariantsList}
+                                                                onDoubleClick={handleSaveEmoji}
+                                                        >
+                                                                <Emoji emoji={emoji} />
+                                                        </li>
+                                                        {
+                                                                emoji.attributes.variants.map((variant, index) => {
+                                                                        return ifEmoji(variant.character) 
+                                                                        ? 
+                                                                        <li 
+                                                                                className='variant' 
+                                                                                key={ index } 
+                                                                                onMouseOut={handleHideVariantsList}
+                                                                                onDoubleClick={handleSaveEmoji}
+                                                                        >
+                                                                                <Emoji emoji={variant} />
+                                                                        </li> 
+                                                                        : 
+                                                                        null
+                                                                })
+                                                        }
+                                                </ul>
+                                        }
+                                </li>
+                        )
+                } else {
                         return ifEmoji(emoji.attributes.character) 
                         ? 
                         <li 
@@ -121,7 +121,7 @@ const EmojisListComponent = () => {
                         </li> 
                         : 
                         null
-                // }
+                }
         })
         return (
                 <>      
