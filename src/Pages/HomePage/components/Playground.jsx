@@ -3,7 +3,7 @@ import Header from './Header'
 import '../../../Assets/playground.css'
 import EmojisListComponent from './EmojisListComponent'
 import sampleAd1 from '../../../Images/sample-ad-1.jpg'
-import sampleAd2 from '../../../Images/sample-ad-2.jpg'
+import sampleAd2 from '../../../Images/sample-ad-2.png'
 
 const Playground = () => {
         return (
