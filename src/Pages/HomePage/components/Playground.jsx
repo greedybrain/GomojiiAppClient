@@ -2,6 +2,8 @@ import React from 'react'
 import Header from './Header'
 import '../../../Assets/playground.css'
 import EmojisListComponent from './EmojisListComponent'
+import sampleAd1 from '../../../Images/sample-ad-1.jpg'
+import sampleAd2 from '../../../Images/sample-ad-2.jpg'
 
 const Playground = () => {
         return (
@@ -13,10 +15,10 @@ const Playground = () => {
                                 <div className="ads">
                                         <ul className="footer_ads_section">
                                                 <li className="ad_1">
-                                                        <img src={`${process.env.PUBLIC_URL}/images/sample-ad-1.jpg`} alt="ad 1"/>
+                                                        <img src={sampleAd1} alt="ad 1"/>
                                                 </li>
                                                 <li className="ad_2">
-                                                        <img src={`${process.env.PUBLIC_URL}/images/sample-ad-2.png`} alt="ad 2"/>
+                                                        <img src={sampleAd2} alt="ad 2"/>
                                                 </li>
                                                 <li className="copyright_footer">
                                                         <span aria-label="copyright emoji" role="img">©️</span> 2020 Gomojii

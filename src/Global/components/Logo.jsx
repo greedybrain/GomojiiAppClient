@@ -1,5 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import miniLogoWhite from '../../Images/mini-logo-white.png'
+import miniLogoBlack from '../../Images/mini-logo-black.png'
 
 const Logo = () => {
         const history = useHistory()
@@ -7,11 +9,11 @@ const Logo = () => {
                 history.location.pathname === '/'
                 ?
                 <div className="logo">
-                        <img src={`${process.env.PUBLIC_URL}/images/mini-logo-white.png`} alt="white logo"/>
+                        <img src={miniLogoWhite} alt="white logo"/>
                 </div>
                 :
                 <div className="logo">
-                        <img src={`${process.env.PUBLIC_URL}/images/mini-logo-black.png`} alt="black logo"/>
+                        <img src={miniLogoBlack} alt="black logo"/>
                 </div>
         )
 }
