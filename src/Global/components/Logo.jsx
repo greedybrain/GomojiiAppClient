@@ -7,11 +7,11 @@ const Logo = () => {
                 history.location.pathname === '/'
                 ?
                 <div className="logo">
-                        <img src='/images/mini-logo-white.png' alt="white logo"/>
+                        <img src={`${process.env.PUBLIC_URL}/images/mini-logo-white.png`} alt="white logo"/>
                 </div>
                 :
                 <div className="logo">
-                        <img src='/images/mini-logo-black.png' alt="black logo"/>
+                        <img src={`${process.env.PUBLIC_URL}/images/mini-logo-black.png`} alt="black logo"/>
                 </div>
         )
 }
