@@ -52,7 +52,8 @@ const EmojisListComponent = () => {
         }       
         
         const renderEmojis = renderAccEmojis().map((emoji, index) => {
-                if (emoji.attributes.variants.length > 0) {
+                const emojiVariants = emoji.attributes.variants
+                if (emojiVariants && emojiVariants.length > 0) {
                         return (
                                 <li 
                                         key={index} 
