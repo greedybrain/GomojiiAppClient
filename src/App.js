@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Routes from './Routes/Routes';
 // import { loadEmojis } from './Store/emojis';
 import { checkLoggedInStatusThunk } from './Store/middleware/authThunk';
-// import { loadEmojisThunk } from './Store/middleware/emojisThunk';
+import { loadEmojisThunk } from './Store/middleware/emojisThunk';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
           dispatch(checkLoggedInStatusThunk(history))
-          // dispatch(loadEmojisThunk())
+          dispatch(loadEmojisThunk())
   })
 
   return (
