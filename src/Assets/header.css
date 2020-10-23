@@ -91,11 +91,14 @@ header ul li:not(:first-child) {
   margin-left: 30px;
 }
 
-header ul li.results, header ul li.home, header ul li.favs, header ul li.login, header ul li.signup, header ul li.logout_btn, header ul li.help {
+header ul li.results, header ul li.home, header ul li.favs, header ul li.login, header ul li.signup,
+header ul li span.logout_btn, header ul li.help {
   font-size: 1.5rem;
 }
 
-header ul li.results::after, header ul li.results a, header ul li.home::after, header ul li.home a, header ul li.favs::after, header ul li.favs a, header ul li.login::after, header ul li.login a, header ul li.signup::after, header ul li.signup a, header ul li.logout_btn::after, header ul li.logout_btn a, header ul li.help::after, header ul li.help a {
+header ul li.results::after, header ul li.results a, header ul li.home::after, header ul li.home a, header ul li.favs::after, header ul li.favs a, header ul li.login::after, header ul li.login a, header ul li.signup::after, header ul li.signup a,
+header ul li span.logout_btn::after,
+header ul li span.logout_btn a, header ul li.help::after, header ul li.help a {
   font-size: 1.2rem;
   margin-left: 5px;
   position: relative;
@@ -118,7 +121,7 @@ header ul li.favs span.saves_count {
   padding-left: 5px;
 }
 
-header ul li.logout_btn::after {
+header ul li span.logout_btn::after {
   content: "Logout";
 }
 
@@ -196,7 +199,8 @@ header ul li.menu_btn div.line_2 {
   header form div.search_bar_area div.submit_btn button {
     font-size: 1rem;
   }
-  header ul li.results, header ul li.home, header ul li.favs, header ul li.login, header ul li.signup, header ul li.logout_btn, header ul li.help {
+  header ul li.results, header ul li.home, header ul li.favs, header ul li.login, header ul li.signup,
+  header ul li span.logout_btn, header ul li.help {
     display: none;
   }
   header ul li.menu_btn {

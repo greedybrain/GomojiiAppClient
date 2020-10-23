@@ -1,10 +1,8 @@
 import React from 'react'
-import { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink, useHistory } from 'react-router-dom'
 import '../../../Assets/header.css'
 import Logout from '../../../Global/components/Logout'
-import MenuDrawer from '../../../Global/components/MenuDrawer'
 import SearchForm from './SearchForm'
 
 const Header = () => {
@@ -14,13 +12,27 @@ const Header = () => {
                 userEmojis: state.authRed.userEmojis
         }))
         const history = useHistory()
-        const refMenuButton = useRef(null)
+        
+        const handleOpenMenuDrawer = event => {
+                const menuBtn = document.querySelector('.menu_btn')
+                const menuDrawer = document.querySelector('.menu_drawer_wrapper')
+                menuDrawer.classList.add(
+                        'animate__animated',
+                        'animate__fadeInRight'
+                )
+                menuBtn.style.display = 'none'
+                menuDrawer.style.display = 'flex'
+                setTimeout(() => {
+                        menuDrawer.classList.remove(
+                                'animate__fadeInRight'
+                        )
+                }, 1000);
+        }
 
         return (
                 <header 
                         className='mode_change'
                 >
-                        <MenuDrawer />
                         <SearchForm />
                         <ul>
                                 <li className="results">
@@ -41,7 +53,9 @@ const Header = () => {
                                                         <span role='img' aria-label='fav'>❤️   </span>
                                                         <span className="saves_count"> { state.userEmojis.length }</span>
                                                 </li>
-                                                <Logout />
+                                                <li>
+                                                        <Logout />
+                                                </li>
                                                 <li className="help">
                                                         <span role='img' aria-label='help'>
                                                                 🤷🏽‍♂️
@@ -63,7 +77,7 @@ const Header = () => {
                                                 </li>
                                         </>
                                 }
-                                <li className="menu_btn" ref={refMenuButton}>
+                                <li className="menu_btn" onClick={handleOpenMenuDrawer}>
                                         <div className="line_1"></div>
                                         <div className="line_2"></div>
                                         <div className="line_3"></div>

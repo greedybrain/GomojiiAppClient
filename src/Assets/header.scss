@@ -11,7 +11,6 @@ header {
         
         form {
                 width: 35vw;
-                // min-width: 215px;
                 div.search_bar_area {
                         display: flex;
                         justify-content: space-between;
@@ -71,7 +70,7 @@ header {
                         &.favs,
                         &.login,
                         &.signup,
-                        &.logout_btn ,
+                        span.logout_btn ,
                         &.help{
                                 font-size: 1.5rem;
                                 &::after, a {
@@ -101,7 +100,7 @@ header {
                                         padding-left: 5px;
                                 }
                         }
-                        &.logout_btn {
+                        span.logout_btn {
                                 &::after {
                                         content: "Logout";
                                 }
@@ -199,7 +198,7 @@ header {
                                 &.favs,
                                 &.login,
                                 &.signup,
-                                &.logout_btn ,
+                                span.logout_btn ,
                                 &.help{
                                         display: none;
                                 }

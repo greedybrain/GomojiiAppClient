@@ -4,9 +4,7 @@ div.menu_drawer_wrapper {
   right: 0;
   z-index: 200;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
 }
 
 div.menu_drawer_wrapper div.left_overlay {
@@ -35,7 +33,7 @@ div.menu_drawer_wrapper ul.menu_drawer li {
 }
 
 div.menu_drawer_wrapper ul.menu_drawer li:first-child {
-  display: inline-block;
+  display: inlinen-block;
   text-align: right;
   margin: 15px 30px 0 0;
   font-size: 2.5rem;
@@ -60,4 +58,66 @@ div.menu_drawer_wrapper ul.menu_drawer li span.menu_drawer_item_name {
 div.menu_drawer_wrapper ul.menu_drawer li a {
   margin-right: 10px;
   color: #fff;
+}
+
+@media only screen and (max-width: 840px) {
+  div.menu_drawer_wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    width: 100%;
+    display: none;
+  }
+  div.menu_drawer_wrapper div.left_overlay {
+    width: 35vw;
+    height: 100vh;
+    background-color: #575757e3;
+  }
+  div.menu_drawer_wrapper ul.menu_drawer {
+    width: 50vw;
+    height: 100vh;
+    background-color: #313131e3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  div.menu_drawer_wrapper ul.menu_drawer li {
+    color: #fff;
+    font-size: 1.8rem;
+  }
+  div.menu_drawer_wrapper ul.menu_drawer li:first-child span {
+    display: inline-block;
+    position: relative;
+    text-align: right;
+    right: 15px;
+    bottom: 5px;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  div.menu_drawer_wrapper ul.menu_drawer li:not(:first-child) {
+    text-align: left;
+    margin: 40px 0 0 0;
+    padding-left: 30px;
+  }
+  div.menu_drawer_wrapper ul.menu_drawer li span.logout_btn {
+    cursor: pointer;
+    display: inline-block;
+  }
+  div.menu_drawer_wrapper ul.menu_drawer li span.logout_btn::after {
+    content: 'Logout';
+    margin-left: 10px;
+  }
+  div.menu_drawer_wrapper ul.menu_drawer li span.menu_drawer_item_name {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  div.menu_drawer_wrapper ul.menu_drawer li a {
+    margin-right: 10px;
+    color: #fff;
+  }
 }

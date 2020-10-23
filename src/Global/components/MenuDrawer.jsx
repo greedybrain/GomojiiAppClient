@@ -13,6 +13,7 @@ const MenuDrawer = () => {
         const refMenuDrawer = useRef(null)
 
         const handleCloseDrawer = () => {
+                const menuBtn = document.querySelector('.menu_btn')
                 refMenuDrawer.current.classList.add(
                         'animate__animated',
                         'animate__fadeOutRight'
@@ -22,6 +23,7 @@ const MenuDrawer = () => {
                         refMenuDrawer.current.classList.remove(
                                 'animate__fadeOutRight'
                         )
+                        menuBtn.style.display = 'flex'
                 }, 700)
         }
 
@@ -39,32 +41,31 @@ const MenuDrawer = () => {
                                         </NavLink>
                                 </li>
                                 {
-                                        state.loggedIn && (
-                                                <>
-                                                        <li className="menu_drawer_favs">
-                                                                <span role='img' aria-label='fav'>❤️ { state.userEmojis.length }</span>
-                                                        </li>
+                                        state.loggedIn 
+                                        ? 
+                                        <>
+                                                <li className="menu_drawer_favs">
+                                                        <span role='img' aria-label='fav'>❤️ { state.userEmojis.length }</span>
+                                                </li>
+                                                <li>
                                                         <Logout />
-                                                </>
-                                        )
-                                }
-                                {
-                                        !state.loggedIn && (
-                                                <>
-                                                        <li className="menu_drawer_login">
-                                                                <NavLink to="/login">
-                                                                        <span role='img' aria-label="technologist">🧑🏽‍💻</span>
-                                                                        <span className="menu_drawer_item_name">Login</span>    
-                                                                </NavLink>
-                                                        </li>
-                                                        <li className="menu_drawer_signup">
-                                                                <NavLink to="/signup">
-                                                                        <span role='img' aria-label="hands up">🙋</span>
-                                                                        <span className="menu_drawer_item_name">Signup</span>    
-                                                                </NavLink>
-                                                        </li>
-                                                </>
-                                        )
+                                                </li>
+                                        </>
+                                        :
+                                        <>
+                                                <li className="menu_drawer_login">
+                                                        <NavLink to="/login">
+                                                                <span role='img' aria-label="technologist">🧑🏽‍💻</span>
+                                                                <span className="menu_drawer_item_name">Login</span>    
+                                                        </NavLink>
+                                                </li>
+                                                <li className="menu_drawer_signup">
+                                                        <NavLink to="/signup">
+                                                                <span role='img' aria-label="hands up">🙋</span>
+                                                                <span className="menu_drawer_item_name">Signup</span>    
+                                                        </NavLink>
+                                                </li>
+                                        </>
                                 }
                                 <li className="menu_drawer_signup">
                                         <NavLink to="/signup">

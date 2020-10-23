@@ -4,14 +4,16 @@ import '../../../Assets/playground.css'
 import EmojisListComponent from './EmojisListComponent'
 import sampleAd1 from '../../../Images/sample-ad-1.jpg'
 import sampleAd2 from '../../../Images/sample-ad-2.png'
+import MenuDrawer from '../../../Global/components/MenuDrawer'
 
 const Playground = () => {
         return (
                 <div className="playground_container">
                         <div className="ad"></div>
+                        <MenuDrawer />
                         <Header />
                         <div className="emojis_and_ads">
-                                {<EmojisListComponent />}
+                                <EmojisListComponent />
                                 <div className="ads">
                                         <ul className="footer_ads_section">
                                                 <li className="ad_1">
