@@ -8,12 +8,12 @@ const { baseUrl, emojis } = _get.endpoints
 
 export const loadEmojisThunk = () => {
         return async (dispatch, getState) => {
-                let cachedEmojis = JSON.parse(localStorage.getItem('emojis'))
-                if (cachedEmojis) {
-                        dispatch(requestingEmojis())
-                        dispatch(loadEmojis(cachedEmojis))
-                        return;
-                } else {
+                // let cachedEmojis = JSON.parse(localStorage.getItem('emojis'))
+                // if (cachedEmojis) {
+                //         dispatch(requestingEmojis())
+                //         dispatch(loadEmojis(cachedEmojis))
+                //         return;
+                // } else {
                         try {
                                 dispatch(requestingEmojis())
                                 const response = await axios(`${baseUrl}/${emojis}`)
@@ -23,6 +23,6 @@ export const loadEmojisThunk = () => {
                         } catch(e) {
                                 console.log(e)
                         }
-                }
+                // }
         }
 }
