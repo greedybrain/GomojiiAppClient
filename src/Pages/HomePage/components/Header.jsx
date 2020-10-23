@@ -16,10 +16,6 @@ const Header = () => {
         const history = useHistory()
         const refMenuButton = useRef(null)
 
-        const handleMenuButtonClick = () => {
-                // refMenuButton
-        }
-
         return (
                 <header 
                         className='mode_change'
