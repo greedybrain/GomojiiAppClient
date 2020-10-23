@@ -10,7 +10,7 @@ const Logout = () => {
         const handleLogout = () => {
                 dispatch(logoutUserThunk(history))
         }
-        return <li className="logout_btn" onClick={handleLogout}><span role='img' aria-label='logout'>✌️</span></li>
+        return <li className="logout_btn" onClick={handleLogout}><span role='img' aria-label='logout'>✌️ Logout</span></li>
 }
 
 export default Logout
