@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
           dispatch(checkLoggedInStatusThunk(history))
-          dispatch(loadEmojisThunk())
+          // dispatch(loadEmojisThunk())
   })
 
   return (
