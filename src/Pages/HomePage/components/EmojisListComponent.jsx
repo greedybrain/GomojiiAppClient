@@ -7,6 +7,7 @@ import ifEmoji from 'if-emoji'
 import '../../../Assets/emojisContainer.css'
 import Emoji from './Emoji'
 import { saveEmojiThunk } from '../../../Store/middleware/authThunk'
+import mini_logo_black from '../../../Images/mini-logo-black.png'
 
 const EmojisListComponent = () => {
         const dispatch = useDispatch()
@@ -130,7 +131,7 @@ const EmojisListComponent = () => {
                                 {
                                         state.loading && (
                                                 <li style={{position: 'relative', left: '7.2em', top: '4.5em'}}>
-                                                        <img src='images/mini-logo-black.png' alt="mini logo as loader" className="animate__animated animate__bounce animate__infinite" />
+                                                        <img src={mini_logo_black} alt="mini logo as loader" className="animate__animated animate__bounce animate__infinite" />
                                                 </li>
                                         )
                                 }
