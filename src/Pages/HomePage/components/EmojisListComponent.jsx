@@ -26,13 +26,13 @@ const EmojisListComponent = () => {
                 }
         }
 
-        const handleCaretClick = event => {
-                let isCaret = event.target.classList.contains('caret') || event.target.classList.contains('fas')
-                let variantList = isCaret ? event.target.parentElement.parentElement.nextElementSibling : null
-                if (isCaret) {
-                        variantList.style.display = "block"
-                } 
-        }
+        // const handleCaretClick = event => {
+        //         let isCaret = event.target.classList.contains('caret') || event.target.classList.contains('fas')
+        //         let variantList = isCaret ? event.target.parentElement.parentElement.nextElementSibling : null
+        //         if (isCaret) {
+        //                 variantList.style.display = "block"
+        //         } 
+        // }
 
         // const handleHideVariantsList = event => {
         //         let isVariantCont = event.target.classList.contains('variants_container')
@@ -53,7 +53,7 @@ const EmojisListComponent = () => {
         }       
         
         const renderEmojis = renderAccEmojis().map((emoji, index) => {
-                const emojiVariants = emoji.attributes.variants
+                // const emojiVariants = emoji.attributes.variants
                 // if (emojiVariants && emojiVariants.length > 0) {
                 //         return (
                 //                 <li 
