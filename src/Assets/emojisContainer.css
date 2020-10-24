@@ -68,7 +68,6 @@ ul.emojis_container li div.save_emoji {
   top: 35px;
   left: -20px;
   color: #fff;
-  background-color: #00cc11;
   border-radius: 100px;
   width: 24px;
   height: 23px;
@@ -78,6 +77,34 @@ ul.emojis_container li div.save_emoji {
 
 ul.emojis_container li div.save_emoji i {
   display: inline-block;
+}
+
+ul.emojis_container li.loader_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-self: center;
+  text-align: center;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+ul.emojis_container li.loader_image div.image {
+  width: 200px;
+  position: relative;
+  bottom: 60px;
+}
+
+ul.emojis_container li.loader_image div.image img {
+  width: 100%;
 }
 
 @media only screen and (max-width: 950px) {

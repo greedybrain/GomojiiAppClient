@@ -130,8 +130,10 @@ const EmojisListComponent = () => {
                         <ul className="emojis_container">
                                 {
                                         state.loading && (
-                                                <li style={{position: 'relative', left: '7.2em', top: '4.5em'}}>
-                                                        <img src={mini_logo_black} alt="mini logo as loader" className="animate__animated animate__bounce animate__infinite" />
+                                                <li className="loader_image">
+                                                        <div className="image">
+                                                                <img src={mini_logo_black} alt="mini logo as loader" className="animate__animated animate__bounce animate__infinite" />
+                                                        </div>
                                                 </li>
                                         )
                                 }

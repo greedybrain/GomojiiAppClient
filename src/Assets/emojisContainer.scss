@@ -1,6 +1,5 @@
 ul.emojis_container {
         position: fixed;
-        // top: 50px;
         z-index: 102;
         border-right: 1px solid #d1d1d17a;
         width: 65vw;
@@ -30,10 +29,6 @@ ul.emojis_container {
                         }
                 }
 
-                // img.loading_image {
-                //         // animation: imageAnimation 1s forwards infinite;
-                // }
-
                 ul.variants_container {
                         display: flex;
                         position: absolute;
@@ -56,7 +51,6 @@ ul.emojis_container {
                         top: 35px;
                         left: -20px;
                         color: #fff;
-                        background-color: #00cc11;
                         border-radius: 100px;
                         width: 24px;
                         height: 23px;
@@ -65,6 +59,28 @@ ul.emojis_container {
                         i {
                                 display: inline-block;
         
+                        }
+                }
+        }
+
+        li.loader_image {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                justify-self: center;
+                text-align: center;
+                padding: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                div.image {
+                        width: 200px;
+                        position: relative;
+                        bottom: 60px;
+
+                        img {
+                                width: 100%;
                         }
                 }
         }
