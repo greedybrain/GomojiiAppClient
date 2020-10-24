@@ -79,7 +79,7 @@ const EmojisListComponent = () => {
                                                                 onClick={handleCaretClick}></i>
                                                 </div>
                                         </div>
-                                        {
+                                        {/* {
                                                 <ul 
                                                         className="variants_container" 
                                                         style={{display: 'none'}} 
@@ -108,7 +108,7 @@ const EmojisListComponent = () => {
                                                                 })
                                                         }
                                                 </ul>
-                                        }
+                                        } */}
                                 </li>
                         )
                 } else {
