@@ -34,14 +34,14 @@ const EmojisListComponent = () => {
                 } 
         }
 
-        const handleHideVariantsList = event => {
-                let isVariantCont = event.target.classList.contains('variants_container')
-                if (isVariantCont) {
-                        event.target.style.display = 'none'
-                } else {
-                        return null
-                }
-        }
+        // const handleHideVariantsList = event => {
+        //         let isVariantCont = event.target.classList.contains('variants_container')
+        //         if (isVariantCont) {
+        //                 event.target.style.display = 'none'
+        //         } else {
+        //                 return null
+        //         }
+        // }
 
         const handleSaveEmoji = event => {
                 const emojiId = event.target.dataset.id
