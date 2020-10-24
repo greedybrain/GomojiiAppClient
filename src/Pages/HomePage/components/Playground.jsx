@@ -16,7 +16,7 @@ const Playground = () => {
                                         <ul className="footer_ads_section">
                                                 <li className="ad_1">
                                                         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                                        <ins class="adsbygoogle"
+                                                        <ins className="adsbygoogle"
                                                         style={{display: 'block'}}
                                                         data-ad-client="ca-pub-7186715356628967"
                                                         data-ad-slot="6294394158"
